@@ -1,3 +1,5 @@
+export { default as FaceBook } from "./FaceBook";
+export { default as Insta } from "./Insta";
 export { default as Archive } from "./Archive";
 export { default as Bag } from "./Bag";
 export { default as BurgerMenu } from "./BurgerMenu";
@@ -10,4 +12,5 @@ export { default as Percent } from "./Percent";
 export { default as Phone } from "./Phone";
 export { default as React } from "./React";
 export { default as Search } from "./Search";
+export { default as Tg } from "./Tg";
 export { default as User } from "./User";

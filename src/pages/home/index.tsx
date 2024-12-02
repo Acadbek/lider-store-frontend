@@ -17,9 +17,11 @@ import categoryImage4 from '../../assets/images/lider-ice.png'
 import categoryImage5 from '../../assets/images/lider-computer.png'
 import categoryImage6 from '../../assets/images/lider-darmol.png'
 import { Link } from "react-router-dom";
+import { useTranslation, withTranslation, Trans } from 'react-i18next';
 
 const Home = () => {
   const [hoveredIndex, setHoveredIndex] = React.useState(null);
+  const { t, i18n } = useTranslation();
 
   const products = [
     {
@@ -84,12 +86,12 @@ const Home = () => {
   ]
 
   const categoryImages = [
-    { link: categoryImage1, size: '50%', bgColor: '#FF6347', title: 'Смартфоны' },
-    { link: categoryImage2, size: '70%', bgColor: '#A7F432', title: 'Кондиционеры' },
-    { link: categoryImage3, size: '70%', bgColor: '#FFDAB9', title: 'Телевизоры' },
-    { link: categoryImage4, size: '60%', bgColor: '#FF00FF', title: 'Холодильники' },
-    { link: categoryImage5, size: '70%', bgColor: '#FAD1D3', title: 'Компьютеры' },
-    { link: categoryImage6, size: '50%', bgColor: '#960018', title: 'Мелкая техника для дома' },
+    { link: categoryImage1, size: '50%', bgColor: '#FF6347', title: t('Смартфоны') },
+    { link: categoryImage2, size: '70%', bgColor: '#A7F432', title: t('Кондиционеры') },
+    { link: categoryImage3, size: '70%', bgColor: '#FFDAB9', title: t('Телевизоры') },
+    { link: categoryImage4, size: '60%', bgColor: '#FF00FF', title: t('Холодильники') },
+    { link: categoryImage5, size: '70%', bgColor: '#FAD1D3', title: t('Компьютеры') },
+    { link: categoryImage6, size: '50%', bgColor: '#960018', title: t('Мелкая техника для дома') },
   ]
   return (
     <>
@@ -125,7 +127,7 @@ const Home = () => {
           ))}
         </section>
         <section>
-          <h2 className="text-2xl font-bold mt-12 text-black dark:text-white">Акции и видеообзоры</h2>
+          <h2 className="text-2xl font-bold mt-12 text-black dark:text-white">{t("Акции и видеообзоры")}</h2>
           <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(220px,1fr))] mt-6">
             <div className="border p-4 h-[330px] rounded-lg">
               <img className="w-full rounded-lg h-[230px] object-cover" src="https://placehold.co/285x230" alt="" />
@@ -157,7 +159,7 @@ const Home = () => {
             {categoryImages.map((item, index) => (
               <div
                 key={index}
-                className="group border transition p-4 w-[310px] h-[260px] rounded-lg cursor-pointer dark:hover:text-black"
+                className="group border p-4 w-[310px] h-[260px] rounded-lg cursor-pointer dark:hover:text-black"
                 style={{
                   backgroundImage: `url(${item.link})`,
                   backgroundSize: item.size,
@@ -174,7 +176,7 @@ const Home = () => {
             ))}
           </div>
           <div className="border p-4 w-[310px] h-[535px] rounded-lg">
-            <p className="text-2xl font-bold mb-4">Люди часто ищут</p>
+            <p className="text-2xl font-bold mb-4">{t("Люди часто ищут")}</p>
             <ul className="[&>li]:pb-2 [&>li]:mb-3 [&>li]:cursor-pointer [&>li]:border-b [&>li]:text-black dark:[&>li]:text-white">
               <li>
                 <Link to="/products">Стиральные машины Premier</Link>

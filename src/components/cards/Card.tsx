@@ -1,6 +1,7 @@
 import { Button } from "../ui/button"
 import { Card, CardContent } from "../ui/card"
 import { Icon } from "../shared/Icon"
+import { t } from "i18next"
 
 type Product = {
   name: string
@@ -25,7 +26,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <p className="text-sm text-muted-foreground">{product.brand}</p>
         <p className="text-sm font-medium">${product.price}</p>
         <div className="grid grid-cols-4 gap-2 items-center mt-3">
-          <Button variant="outline" className="col-span-3 shadow-none">Buy now</Button>
+          <Button variant="outline" className="col-span-3 shadow-none">{t('Buy now')}</Button>
           <Button className="shadow-none">
             <Icon icon="Bag" />
           </Button>
