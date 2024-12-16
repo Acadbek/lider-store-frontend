@@ -53,6 +53,7 @@ export default {
       }
     }
   },
-  // plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('@codaworks/react-glow/tailwind')],
+
 }
 

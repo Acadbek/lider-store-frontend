@@ -1,13 +1,5 @@
 import React from "react";
 import Navbar from "@/components/shared/Navbar";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
 import ProductCard from "../../components/cards/Card";
 import { CardTitle } from "../../components/ui/card";
 import categoryImage1 from '../../assets/images/lider-phone.png'
@@ -17,72 +9,44 @@ import categoryImage4 from '../../assets/images/lider-ice.png'
 import categoryImage5 from '../../assets/images/lider-computer.png'
 import categoryImage6 from '../../assets/images/lider-darmol.png'
 import { Link } from "react-router-dom";
-import { useTranslation, withTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import Hero from "@/components/shared/Hero";
 
 const Home = () => {
   const [hoveredIndex, setHoveredIndex] = React.useState(null);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const products = [
     {
       name: "Wireless Headphones",
       brand: "SoundPro",
       price: 49.99,
-      image: "https://example.com/images/headphones.jpg"
+      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
     },
     {
       name: "Smartphone",
       brand: "Apple",
       price: 999.99,
-      image: "https://example.com/images/iphone.jpg"
+      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
     },
     {
       name: "Laptop",
       brand: "Dell",
       price: 1299.99,
-      image: "https://example.com/images/laptop.jpg"
+      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
     },
     {
       name: "Wireless Headphones",
       brand: "SoundPro",
       price: 49.99,
-      image: "https://example.com/images/headphones.jpg"
+      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
     },
     {
       name: "Smartphone",
       brand: "Apple",
       price: 999.99,
-      image: "https://example.com/images/iphone.jpg"
-    },
-    {
-      name: "Laptop",
-      brand: "Dell",
-      price: 1299.99,
-      image: "https://example.com/images/laptop.jpg"
+      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
     }
-  ]
-
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
-
-  const carouselImages = [
-    {
-      id: 1,
-      link: 'https://placehold.co/600x330'
-    },
-    {
-      id: 2,
-      link: 'https://placehold.co/600x330'
-    },
-    {
-      id: 3,
-      link: 'https://placehold.co/600x430'
-    },
-    {
-      id: 4,
-      link: 'https://placehold.co/600x330'
-    },
   ]
 
   const categoryImages = [
@@ -95,32 +59,11 @@ const Home = () => {
   ]
   return (
     <>
-      <Navbar />
-      <header className="container mx-auto">
-        <div className="grid grid-cols-4 gap-4">
-          <div className="col-span-2 w-full rounded-lg">
-            <Carousel
-              plugins={[plugin.current]}
-              className="col-span-2 w-full rounded-lg"
-              onMouseEnter={plugin.current.stop}
-              onMouseLeave={plugin.current.reset}
-            >
-              <CarouselContent>
-                {carouselImages.map((item) => (
-                  <CarouselItem key={item.id} className="overflow-hidden rounded-md">
-                    <img className="w-full rounded-lg h-[330px] object-cover" src={item.link} alt="" />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
-          <img className="rounded-lg h-[330px] object-cover w-full" src="https://placehold.co/330x350" alt="" />
-          <img className="rounded-lg h-[330px] object-cover w-full" src="https://placehold.co/330x350" alt="" />
-        </div>
+      <header>
+        <Navbar />
+        <Hero />
       </header>
-      <main className="container mx-auto">
+      <div className="container mx-auto">
         <section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(220px,1fr))] mt-6">
           {products.map((product) => (
             <ProductCard key={product.name} product={product} />
@@ -155,7 +98,7 @@ const Home = () => {
         </section>
         <h2 className="text-2xl font-bold mt-12 text-black dark:text-white">Категории</h2>
         <section className="flex items-start justify-between mt-6 gap-4">
-          <div className="grid gap-4 grid-cols-3">
+          <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
             {categoryImages.map((item, index) => (
               <div
                 key={index}
@@ -199,7 +142,7 @@ const Home = () => {
             </ul>
           </div>
         </section>
-      </main >
+      </div>
     </>
   );
 };

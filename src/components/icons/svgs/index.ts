@@ -14,3 +14,4 @@ export { default as React } from "./React";
 export { default as Search } from "./Search";
 export { default as Tg } from "./Tg";
 export { default as User } from "./User";
+export { default as X } from "./X";
