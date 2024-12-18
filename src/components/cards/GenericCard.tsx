@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-const GenericCard = ({ gridCols = 3 }) => {
+const GenericCard = ({ gridCols = 3, productsCategory }) => {
   const sections = [
     {
       title: "Cleaning tools",
@@ -43,7 +43,7 @@ const GenericCard = ({ gridCols = 3 }) => {
   ]
 
   return (
-    <div className='relative aspect-video h-[300px] rounded border border-zinc-100 bg-white dark:border-zinc-800 dark:bg-black'>
+    <div className='relative aspect-video rounded border border-zinc-100 bg-white dark:border-zinc-800 dark:bg-black'>
       <Spotlight
         className='from-primary via-blue-500 to-blue-300 blur-xl dark:from-blue-900 dark:via-blue-500 dark:to-blue-900'
         size={200}

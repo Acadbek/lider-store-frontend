@@ -58,14 +58,17 @@ const Home = () => {
     { link: categoryImage5, size: '70%', bgColor: '#FAD1D3', title: t('Компьютеры') },
     { link: categoryImage6, size: '50%', bgColor: '#960018', title: t('Мелкая техника для дома') },
   ]
+
+  const productsCategory = []
   return (
     <>
       <header>
         <Navbar />
         <Hero />
       </header>
-      <div className="container mx-auto">
-        <GenericCard />
+      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6 container mx-auto">
+        <GenericCard products={productsCategory} />
+        <GenericCard products={productsCategory} />
       </div>
       <div className="container mx-auto">
         <section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6">
