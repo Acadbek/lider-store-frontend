@@ -1,16 +1,17 @@
 import React from "react";
 import Navbar from "@/components/shared/Navbar";
-import ProductCard from "../../components/cards/Card";
-import { CardTitle } from "../../components/ui/card";
-import categoryImage1 from '../../assets/images/lider-phone.png'
-import categoryImage2 from '../../assets/images/lider-condi.png'
-import categoryImage3 from '../../assets/images/lider-category.png'
-import categoryImage4 from '../../assets/images/lider-ice.png'
-import categoryImage5 from '../../assets/images/lider-computer.png'
-import categoryImage6 from '../../assets/images/lider-darmol.png'
+import ProductCard from "@/components/cards/Card";
+import { CardTitle } from "@/components/ui/card";
+import categoryImage1 from '@/assets/images/lider-phone.png'
+import categoryImage2 from '@/assets/images/lider-condi.png'
+import categoryImage3 from '@/assets/images/lider-category.png'
+import categoryImage4 from '@/assets/images/lider-ice.png'
+import categoryImage5 from '@/assets/images/lider-computer.png'
+import categoryImage6 from '@/assets/images/lider-darmol.png'
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import Hero from "@/components/shared/Hero";
+import GenericCard from "@/components/cards/GenericCard";
 
 const Home = () => {
   const [hoveredIndex, setHoveredIndex] = React.useState(null);
@@ -64,7 +65,10 @@ const Home = () => {
         <Hero />
       </header>
       <div className="container mx-auto">
-        <section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(220px,1fr))] mt-6">
+        <GenericCard />
+      </div>
+      <div className="container mx-auto">
+        <section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6">
           {products.map((product) => (
             <ProductCard key={product.name} product={product} />
           ))}

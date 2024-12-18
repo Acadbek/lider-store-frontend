@@ -41,9 +41,10 @@ export default function Card({ product }: { product: Product }) {
         style={{
           borderRadius: '12px',
         }}
-        className='flex max-w-[270px] flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
+        className='flex max-w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
       >
         <MorphingDialogImage
+          loading="lazy"
           src={product.image}
           alt='A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood.'
           className='h-48 w-full object-cover'
@@ -52,7 +53,7 @@ export default function Card({ product }: { product: Product }) {
           <div>
             <MorphingDialogTitle className='text-zinc-950 dark:text-zinc-50'>
               {product.name.slice(0, 10)}... <span className="text-sm text-zinc-500 dark:text-zinc-400">{product.price} {t("som")}</span>
-            </MorphingDialogTitle>
+          </MorphingDialogTitle>
             <MorphingDialogSubtitle className='text-zinc-700 dark:text-zinc-400'>
               {product.brand}
             </MorphingDialogSubtitle>
@@ -79,6 +80,7 @@ export default function Card({ product }: { product: Product }) {
                 <CarouselItem key={index}>
                   <div className="w-full">
                     <MorphingDialogImage
+                      loading="lazy"
                       src={product.image}
                       alt='A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood.'
                       className='h-full w-full'
