@@ -12,9 +12,10 @@ import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import Hero from "@/components/shared/Hero";
 import GenericCard from "@/components/cards/GenericCard";
+import { Carousel, CarouselContent, CarouselItem, CarouselNavigation } from "../../components/ui/carousel";
 
 const Home = () => {
-  const [hoveredIndex, setHoveredIndex] = React.useState(null);
+  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>();
   const { t } = useTranslation();
 
   const products = [
@@ -59,7 +60,141 @@ const Home = () => {
     { link: categoryImage6, size: '50%', bgColor: '#960018', title: t('Мелкая техника для дома') },
   ]
 
-  const productsCategory = []
+  const generic1 = [
+    {
+      title: "Cleaning tools",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/CleaningTool_2x._SY232_CB563137408_.jpg",
+      alt: "Men's gift collection including toiletries and accessories"
+    },
+    {
+      title: "Home storage",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/HomeStorage_2x._SY232_CB563137408_.jpg",
+      alt: "Women's gift collection including beauty products and accessories"
+    },
+    {
+      title: "Home decor",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/HomeDecor_2x._SY232_CB563137408_.jpg",
+      alt: "Kids' gift collection including toys and camera"
+    },
+    {
+      title: "Bedding",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/Bedding_2x._SY232_CB563137408_.jpg",
+      alt: "Teen gift collection including instant camera and accessories"
+    },
+    {
+      title: "For kids",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/CleaningTool_2x._SY232_CB563137408_.jpg",
+      alt: "Kids' gift collection including toys and camera"
+    },
+    {
+      title: "For teens",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/CleaningTool_2x._SY232_CB563137408_.jpg",
+      alt: "Teen gift collection including instant camera and accessories"
+    }
+  ]
+
+  const generic2 = [
+    {
+      title: "Cleaning tools",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4480_HS2_DQC_2-2_ShopbyRecipient_For-Him_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Men's gift collection including toiletries and accessories"
+    },
+    {
+      title: "Home storage",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4481_HS2_DQC_2-2_ShopbyRecipient_For-Her_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Women's gift collection including beauty products and accessories"
+    },
+    {
+      title: "Home decor",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4482_HS2_DQC_2-2_ShopbyRecipient_For-Kids_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Kids' gift collection including toys and camera"
+    },
+    {
+      title: "Bedding",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4483_HS2_DQC_2-2_ShopbyRecipient_For-Teens_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Teen gift collection including instant camera and accessories"
+    }
+  ]
+
+  const generic3 = [
+    {
+      title: "Phones",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Aug/Smartphone_2x._SY232_CB566164844_.jpg",
+      alt: "Men's gift collection including toiletries and accessories"
+    },
+    {
+      title: "Watches",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Aug/Watches_2x._SY232_CB566164844_.jpg",
+      alt: "Women's gift collection including beauty products and accessories"
+    },
+    {
+      title: "Headphones",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Aug/Headphone_2x._SY232_CB566164844_.jpg",
+      alt: "Kids' gift collection including toys and camera"
+    },
+    {
+      title: "Tablets",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Aug/Tablet_2x._SY232_CB566164844_.jpg",
+      alt: "Teen gift collection including instant camera and accessories"
+    },
+    {
+      title: "Projectors",
+      image: "https://m.media-amazon.com/images/I/61kRNDZh8UL._AC_UY436_FMwebp_QL65_.jpg",
+      alt: "Teen gift collection including instant camera and acce ssories"
+    },
+    {
+      title: "Speakers",
+      image: "https://m.media-amazon.com/images/I/61qMO3TS2RL._AC_UY436_FMwebp_QL65_.jpg",
+      alt: "Teen gift collection including instant camera and acce ssories"
+    }
+  ]
+
+  const generic4 = [
+    {
+      title: "Cleaning tools",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4480_HS2_DQC_2-2_ShopbyRecipient_For-Him_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Men's gift collection including toiletries and accessories"
+    },
+    {
+      title: "Home storage",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4481_HS2_DQC_2-2_ShopbyRecipient_For-Her_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Women's gift collection including beauty products and accessories"
+    },
+    {
+      title: "Home decor",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4482_HS2_DQC_2-2_ShopbyRecipient_For-Kids_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Kids' gift collection including toys and camera"
+    },
+    {
+      title: "Bedding",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4483_HS2_DQC_2-2_ShopbyRecipient_For-Teens_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Teen gift collection including instant camera and accessories"
+    }
+  ]
+
+  const generic5 = [
+    {
+      title: "Cleaning tools",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4480_HS2_DQC_2-2_ShopbyRecipient_For-Him_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Men's gift collection including toiletries and accessories"
+    },
+    {
+      title: "Home storage",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4481_HS2_DQC_2-2_ShopbyRecipient_For-Her_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Women's gift collection including beauty products and accessories"
+    },
+    {
+      title: "Home decor",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4482_HS2_DQC_2-2_ShopbyRecipient_For-Kids_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Kids' gift collection including toys and camera"
+    },
+    {
+      title: "Bedding",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4483_HS2_DQC_2-2_ShopbyRecipient_For-Teens_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Teen gift collection including instant camera and accessories"
+    }
+  ]
+
   return (
     <>
       <header>
@@ -67,9 +202,28 @@ const Home = () => {
         <Hero />
       </header>
       <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6 container mx-auto">
-        <GenericCard products={productsCategory} />
-        <GenericCard products={productsCategory} />
+        <GenericCard title={t('Shop for your home essentials')} products={generic1} />
+        <GenericCard gridCols={2} title={t('Shop gifts by recipient')} products={generic2} />
       </div>
+      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6 container mx-auto">
+        <GenericCard title={t('Fantastic Finds for Home')} products={generic1} />
+        <GenericCard gridCols={3} title={t('Top categories in Kitchen appliances')} products={generic2} />
+        <GenericCard gridCols={3} title={t('Wireless Tech')} products={generic3} />
+      </div>
+      <section className="mt-8">
+        <Carousel>
+          <CarouselContent>
+            {Array.from({ length: 8 }).map((_, index) => (
+              <CarouselItem key={index} className='basis-1/5'>
+                <div className='flex aspect-square items-center justify-center border-b border-l border-t border-zinc-200 dark:border-zinc-800'>
+                  {index + 1}
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselNavigation />
+        </Carousel>
+      </section>
       <div className="container mx-auto">
         <section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6">
           {products.map((product) => (

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Spotlight } from "../ui/spotlight";
-import { SVGProps } from 'react';
 import {
   Tooltip,
   TooltipContent,
@@ -8,76 +7,49 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-const GenericCard = ({ gridCols = 3, productsCategory }) => {
-  const sections = [
-    {
-      title: "Cleaning tools",
-      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/CleaningTool_2x._SY232_CB563137408_.jpg",
-      alt: "Men's gift collection including toiletries and accessories"
-    },
-    {
-      title: "Home storage",
-      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/HomeStorage_2x._SY232_CB563137408_.jpg",
-      alt: "Women's gift collection including beauty products and accessories"
-    },
-    {
-      title: "Home decor",
-      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/HomeDecor_2x._SY232_CB563137408_.jpg",
-      alt: "Kids' gift collection including toys and camera"
-    },
-    {
-      title: "Bedding",
-      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/Bedding_2x._SY232_CB563137408_.jpg",
-      alt: "Teen gift collection including instant camera and accessories"
-    },
-    {
-      title: "For kids",
-      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/CleaningTool_2x._SY232_CB563137408_.jpg",
-      alt: "Kids' gift collection including toys and camera"
-    },
-    {
-      title: "For teens",
-      image: "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024Sept/CleaningTool_2x._SY232_CB563137408_.jpg",
-      alt: "Teen gift collection including instant camera and accessories"
-    }
-  ]
-
+const GenericCard = ({ gridCols = 3, products, title }) => {
   return (
-    <div className='relative aspect-video rounded border border-zinc-100 bg-white dark:border-zinc-800 dark:bg-black'>
-      <Spotlight
-        className='from-primary via-blue-500 to-blue-300 blur-xl dark:from-blue-900 dark:via-blue-500 dark:to-blue-900'
-        size={200}
-      />
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`
-      }}
-        className='gap-2 relative h-full w-full rounded-xl p-2'>
-        {sections.map((item, index) => (
-          <>
-            <TooltipProvider skipDelayDuration={500} delayDuration={50}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div key={index} className="relative">
+    <div className="border border-zinc-100 bg-white rounded-[12px] dark:border-zinc-800 dark:bg-[#18181B]">
+      <h2 className="text-slate-400 font-semibold text-lg pl-2">{title}</h2>
+      <div className='relative aspect-video rounded-b-[12px]'>
+        <Spotlight
+          className='from-primary via-blue-500 to-blue-300 blur-xl dark:from-blue-900 dark:via-blue-500 dark:to-blue-900'
+          size={200}
+        />
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`
+        }}
+          className='gap-2 relative h-full w-full p-2'>
+          {products.map((item, index) => (
+            <>
+              <TooltipProvider key={index} skipDelayDuration={500} delayDuration={50}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div key={index} className="relative">
+                      <Link to={`/category/?name=${item.title}`}>
+                        <div className="w-full h-full aspect-ratio overflow-hidden rounded-lg">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                        </div>
+                      </Link>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent side="top">
                     <Link to={`/category/${item.title}`}>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover rounded-lg"
-                      />
+                      <h4 className="text-sm text-zinc-100">{item.title}</h4>
                     </Link>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent side="top">
-                  <p className="text-sm text-zinc-100">{item.title}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </>
-        ))}
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </>
+          ))}
+        </div>
       </div>
     </div>
-
   )
 };
 

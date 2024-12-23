@@ -2,7 +2,7 @@ import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -250,6 +250,80 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
+type CarouselNavigationProps = {
+  className?: string;
+  classNameButton?: string;
+  alwaysShow?: boolean;
+};
+
+function CarouselNavigation({
+  className,
+  classNameButton,
+  alwaysShow,
+}: CarouselNavigationProps) {
+  const { index, setIndex, itemsCount } = useCarousel();
+
+  return (
+    <div
+      className={cn(
+        'pointer-events-none absolute left-[-12.5%] top-1/2 flex w-[125%] -translate-y-1/2 justify-between px-2',
+        className
+      )}
+    >
+      <button
+        type='button'
+        aria-label='Previous slide'
+        className={cn(
+          'pointer-events-auto h-fit w-fit rounded-full bg-zinc-50 p-2 transition-opacity duration-300 dark:bg-zinc-950',
+          alwaysShow
+            ? 'opacity-100'
+            : 'opacity-0 group-hover/hover:opacity-100',
+          alwaysShow
+            ? 'disabled:opacity-40'
+            : 'disabled:group-hover/hover:opacity-40',
+          classNameButton
+        )}
+        disabled={index === 0}
+        onClick={() => {
+          if (index > 0) {
+            setIndex(index - 1);
+          }
+        }}
+      >
+        <ChevronLeft
+          className='stroke-zinc-600 dark:stroke-zinc-50'
+          size={16}
+        />
+      </button>
+      <button
+        type='button'
+        className={cn(
+          'pointer-events-auto h-fit w-fit rounded-full bg-zinc-50 p-2 transition-opacity duration-300 dark:bg-zinc-950',
+          alwaysShow
+            ? 'opacity-100'
+            : 'opacity-0 group-hover/hover:opacity-100',
+          alwaysShow
+            ? 'disabled:opacity-40'
+            : 'disabled:group-hover/hover:opacity-40',
+          classNameButton
+        )}
+        aria-label='Next slide'
+        disabled={index + 1 === itemsCount}
+        onClick={() => {
+          if (index < itemsCount - 1) {
+            setIndex(index + 1);
+          }
+        }}
+      >
+        <ChevronRight
+          className='stroke-zinc-600 dark:stroke-zinc-50'
+          size={16}
+        />
+      </button>
+    </div>
+  );
+}
+
 export {
   type CarouselApi,
   Carousel,
@@ -257,4 +331,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselNavigation
 }
