@@ -17,8 +17,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
 
 type Product = {
@@ -89,8 +87,6 @@ export default function Card({ product }: { product: Product }) {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
           </Carousel>
           <div className='p-6'>
             <Link to={`/product/${product.name}`}>

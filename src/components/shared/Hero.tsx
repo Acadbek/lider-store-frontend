@@ -2,9 +2,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+  CarouselNavigation,
+} from "../../components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 import React from "react"
 
@@ -38,10 +37,7 @@ const Hero = () => {
       <div className="grid grid-cols-4 gap-4">
         <div className="col-span-2 w-full rounded-lg">
           <Carousel
-            plugins={[plugin.current]}
             className="col-span-2 w-full rounded-lg"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
               {carouselImages.map((item) => (
@@ -50,8 +46,7 @@ const Hero = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselNavigation alwaysShow left="left-0" width="w-[100%]" />
           </Carousel>
         </div>
         <img className="rounded-lg h-[330px] object-cover w-full" src="https://placehold.co/330x350" alt="" />

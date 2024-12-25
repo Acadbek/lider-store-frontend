@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/shared/Navbar";
 import ProductCard from "@/components/cards/Card";
-import { CardTitle } from "@/components/ui/card";
+import { CardTitle, Card } from "@/components/ui/card";
 import categoryImage1 from '@/assets/images/lider-phone.png'
 import categoryImage2 from '@/assets/images/lider-condi.png'
 import categoryImage3 from '@/assets/images/lider-category.png'
@@ -100,6 +100,16 @@ const Home = () => {
       alt: "Men's gift collection including toiletries and accessories"
     },
     {
+      title: "Cleaning tools",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4480_HS2_DQC_2-2_ShopbyRecipient_For-Him_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Men's gift collection including toiletries and accessories"
+    },
+    {
+      title: "Cleaning tools",
+      image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4480_HS2_DQC_2-2_ShopbyRecipient_For-Him_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
+      alt: "Men's gift collection including toiletries and accessories"
+    },
+    {
       title: "Home storage",
       image: "https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HOL/GW/QuadCard/HS2/HOL24_4481_HS2_DQC_2-2_ShopbyRecipient_For-Her_Nov_1H_2x_372x232._SY232_CB543392481_.jpg",
       alt: "Women's gift collection including beauty products and accessories"
@@ -146,7 +156,7 @@ const Home = () => {
       title: "Speakers",
       image: "https://m.media-amazon.com/images/I/61qMO3TS2RL._AC_UY436_FMwebp_QL65_.jpg",
       alt: "Teen gift collection including instant camera and acce ssories"
-    }
+    },
   ]
 
   const generic4 = [
@@ -195,6 +205,10 @@ const Home = () => {
     }
   ]
 
+  const carouselImages = () => {
+    return generic1.concat(generic2, generic3, generic4)
+  }
+
   return (
     <>
       <header>
@@ -210,20 +224,24 @@ const Home = () => {
         <GenericCard gridCols={3} title={t('Top categories in Kitchen appliances')} products={generic2} />
         <GenericCard gridCols={3} title={t('Wireless Tech')} products={generic3} />
       </div>
-      <section className="mt-8">
+      <Card className="mt-8 shadow-none container mx-auto p-2 border-zinc-100 dark:border-zinc-800">
+        <div className="flex gap-2 text-sm text-black dark:text-white mt-0 pl-2">
+          <h2 className="text-black dark:text-white mt-0">Here come Holiday Specials</h2>
+          <Link to='' className="text-primary hover:underline">More...</Link>
+        </div>
         <Carousel>
           <CarouselContent>
-            {Array.from({ length: 8 }).map((_, index) => (
-              <CarouselItem key={index} className='basis-1/5'>
-                <div className='flex aspect-square items-center justify-center border-b border-l border-t border-zinc-200 dark:border-zinc-800'>
-                  {index + 1}
-                </div>
+            {carouselImages().map((item, index) => (
+              <CarouselItem key={index} className='basis-1/6'>
+                <Link to='/category'>
+                  <img className="w-[210px] h-[131px] object-cover" src={item.image} alt="" />
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselNavigation />
+          <CarouselNavigation alwaysShow left="left-[-5%]" width="w-[110%]" />
         </Carousel>
-      </section>
+      </Card>
       <div className="container mx-auto">
         <section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6">
           {products.map((product) => (

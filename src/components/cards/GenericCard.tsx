@@ -10,7 +10,10 @@ import {
 const GenericCard = ({ gridCols = 3, products, title }) => {
   return (
     <div className="border border-zinc-100 bg-white rounded-[12px] dark:border-zinc-800 dark:bg-[#18181B]">
-      <h2 className="text-slate-400 font-semibold text-lg pl-2">{title}</h2>
+      <div className="flex gap-2 text-sm text-black dark:text-white mb-0 pl-2">
+        <h2 className="text-black dark:text-white mb-0">{title}</h2>
+        <Link to='' className="text-primary hover:underline mt-2">More...</Link>
+      </div>
       <div className='relative aspect-video rounded-b-[12px]'>
         <Spotlight
           className='from-primary via-blue-500 to-blue-300 blur-xl dark:from-blue-900 dark:via-blue-500 dark:to-blue-900'

@@ -40,7 +40,7 @@ export default {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))'
         },
-        border: 'hsl(var(--border))',
+        border: '#E6E6E6',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         chart: {
