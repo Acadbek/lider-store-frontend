@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "GOOGLE PIXEL 0.1",
+      "price": "1500000",
+      "brand": "PIXEL",
+      "image": [
+        "https://cdn.dxomark.com/wp-content/uploads/medias/post-176677/Google-Pixel-9-Pro-XL_featured-image-packshot-review-1024x691.png",
+        "https://lh3.googleusercontent.com/iDX_dCDAJGRiXqcityjN-gBNsd61CjS8DIfXohH30T2jmliG7ofzJiNRUY3TwEQAyTk5x2a--Jvk7smckEWckCTcMkFPEjSkKaA=s0",
+        "https://amateurphotographer.com/wp-content/uploads/sites/7/2024/08/google-pixel-9-pro-XL-in-hand-3-photo-JW-AP-IMG_20240107_120223.jpg?w=900",
+        "https://hips.hearstapps.com/hmg-prod/images/google-pixel-9-review-lead-66c8a74805258.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Tecno Spark GO 2024 3/64",
+      "price": "1118000",
+      "brand": "GOOGLE PIXEL 1",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FRSIYjfakhX8JC5ENtwJD.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FONPeKjbvt8MXsQYcwH1b.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FFF4jgvobPeXWc25ynLGI.png&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Телевизор Shivaki US32H4103",
+      "price": "1461000",
+      "brand": "Shivaki",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FAugust2020%2F2x0X6O6EGV6qBCIttwHT.jpg&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Смартфон Honor X7b Black 8/128GB",
+      "price": "2988000",
+      "brand": "Honor",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FMay2024%2Fr6kPGKYyfIPWDV8tp7C5.png&w=1920&q=75",
+        "https://ir.ozone.ru/s3/multimedia-1-q/c1000/6911943146.jpg",
+        "https://main-cdn.sbermegamarket.ru/big2/hlr-system/976/862/938/130/125/600015551439b10.jpeg"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Холодильник Ferre BCD275",
+      "price": "2999000",
+      "brand": "Ferre",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FWe8MmmWP9ypxianCaHlX.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FBG3upuP01IHunPjynQfS.png&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Ноутбук HP 250 G9 9M3X6AT",
+      "price": "9588000",
+      "brand": "HP",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FOctober2024%2FNkzWupHuKIxuZsk6KYT7.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FOctober2024%2FVdF5Bca2PgXMO3wGKD0p.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FOctober2024%2FSv8X3lpPyuucZfNCylaB.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FOctober2024%2Fuwd2njugJWFIXL4lMfjZ.png&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Ноутбук Acer TravelMate NX.VHSER.00A",
+      "price": "4428000",
+      "brand": "Acer",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FTuxMGkShuR9DBW24D1xO.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2Funo1rFfoHsId0uAMYbH7.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FRyoJJsR5nT8R8YAZkZ48.png&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Ноутбук 15,6 Lenovo V15-IGL 82C3001NAK",
+      "price": "4194000",
+      "brand": "Lenovo",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJanuary2024%2Fa4scNVdlc84AzorJshDU.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJanuary2024%2FgQ0WYI5YM8UMGW6AD1l3.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJanuary2024%2FuLj6jx5NiMN1weGdRAZO.png&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Стиральная машина Premier PRM70F1202LIN/G",
+      "price": "4799000 ",
+      "brand": "Premier",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FNovember2024%2F9k5eGbsFdNzpQAWqnw5c.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FNovember2024%2FaAxv13M23YArCjsU0SGX.png&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Телевизор Premier 32PRM700 S",
+      "price": "1499000",
+      "brand": "Premier",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FMarch2022%2FPp7c5vynus06Pd8rLVSV.jpg&w=1920&q=75",
+        "https://adamag.ru/image/cache/catalog/sync1c/ut-00031574-700x700.jpg",
+        "https://adamag.ru/image/cache/catalog/sync1c/ut-00031574-4-700x700.jpg"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Пылесос Ferre VC-1108 C (синий)",
+      "price": "119900",
+      "brand": "Ferre",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FDecember2024%2F4Rhh0enNeAglf2ekcCiX.png&w=1920&q=75",
+        "http   s://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FDecember2024%2Fkx6gJ9VTA2gOZyXYFfSW.png&w=1920&q=75",
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FDecember2024%2FIyjYgroj9Yt5bFXMooSk.png&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Утюг Shivaki SH-SI-9518",
+      "price": "370000",
+      "brand": "Shivaki",
+      "image": [
+        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FNovember2022%2F6WX9ixu7geux9rhvzmx5.png&w=1920&q=75"
+      ]
+    },
+    {
+      "id": "sdfdsf",
+      "name": "sdfsdf",
+      "price": "32432",
+      "brand": "dsfdsf",
+      "image": "https://cdn-images.farfetch-contents.com/22/71/33/15/22713315_53092218_1000.jpg"
+    }
+  ]
+}

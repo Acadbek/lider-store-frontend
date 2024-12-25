@@ -1,4 +1,3 @@
-import { Icon } from "../shared/Icon";
 import {
   Select,
   SelectContent,
@@ -6,17 +5,18 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { ModeToggle } from "./mode-toggle";
-import { useTranslation } from 'react-i18next';
-import { Link } from "react-router-dom";
+} from "@/components/ui/select";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
+import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
+import { Icon } from "../shared/Icon";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { ModeToggle } from "./mode-toggle";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -56,6 +56,7 @@ const Navbar = () => {
           <Button className="border-l-0 rounded-l-none">
             <Icon className="cursor-pointer" icon="Search" width={32} height={32} />
           </Button>
+          <Link to={'/admin'}>Admin panel</Link>
         </div>
         <div className="flex gap-5 items-center">
           <ModeToggle />

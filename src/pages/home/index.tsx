@@ -1,17 +1,17 @@
-import React from "react";
-import Navbar from "@/components/shared/Navbar";
-import ProductCard from "@/components/cards/Card";
-import { CardTitle, Card } from "@/components/ui/card";
-import categoryImage1 from '@/assets/images/lider-phone.png'
-import categoryImage2 from '@/assets/images/lider-condi.png'
-import categoryImage3 from '@/assets/images/lider-category.png'
-import categoryImage4 from '@/assets/images/lider-ice.png'
-import categoryImage5 from '@/assets/images/lider-computer.png'
-import categoryImage6 from '@/assets/images/lider-darmol.png'
-import { Link } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import categoryImage3 from '@/assets/images/lider-category.png';
+import categoryImage5 from '@/assets/images/lider-computer.png';
+import categoryImage2 from '@/assets/images/lider-condi.png';
+import categoryImage6 from '@/assets/images/lider-darmol.png';
+import categoryImage4 from '@/assets/images/lider-ice.png';
+import categoryImage1 from '@/assets/images/lider-phone.png';
 import Hero from "@/components/shared/Hero";
-import GenericCard from "@/components/cards/GenericCard";
+import Navbar from "@/components/shared/Navbar";
+import ProductCard from "@/components/shared/cards/Card";
+import GenericCard from "@/components/shared/cards/GenericCard";
+import { Card, CardTitle } from "@/components/ui/card";
+import React from "react";
+import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNavigation } from "../../components/ui/carousel";
 
 const Home = () => {

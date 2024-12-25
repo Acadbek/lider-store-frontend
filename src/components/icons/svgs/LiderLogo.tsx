@@ -1,6 +1,5 @@
-import * as React from "react";
 import type { SVGProps } from "react";
-const SvgLiderLogo = (props: SVGProps<SVGSVGElement>) => (
+const SvgLiderLogo = (_props: SVGProps<SVGSVGElement>) => (
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="34" height="34" viewBox="0 0 2000.000000 2000.000000"
     preserveAspectRatio="xMidYMid meet">

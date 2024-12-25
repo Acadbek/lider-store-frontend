@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import { Spotlight } from "../ui/spotlight";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
+import { Link } from "react-router-dom";
+import { Spotlight } from "../../ui/spotlight";
 
 const GenericCard = ({ gridCols = 3, products, title }) => {
   return (

@@ -1,23 +1,22 @@
-import React from "react";
-import { t } from "i18next"
-import {
-  MorphingDialog,
-  MorphingDialogTrigger,
-  MorphingDialogContent,
-  MorphingDialogTitle,
-  MorphingDialogImage,
-  MorphingDialogSubtitle,
-  MorphingDialogClose,
-  MorphingDialogDescription,
-  MorphingDialogContainer,
-} from '@/components/ui/morphing-dialog';
-import { PlusIcon } from 'lucide-react';
-import { Link } from "react-router-dom";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
+import {
+  MorphingDialog,
+  MorphingDialogClose,
+  MorphingDialogContainer,
+  MorphingDialogContent,
+  MorphingDialogDescription,
+  MorphingDialogImage,
+  MorphingDialogSubtitle,
+  MorphingDialogTitle,
+  MorphingDialogTrigger,
+} from '@/components/ui/morphing-dialog';
+import { t } from "i18next";
+import { PlusIcon } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 type Product = {
   name: string
@@ -51,7 +50,7 @@ export default function Card({ product }: { product: Product }) {
           <div>
             <MorphingDialogTitle className='text-zinc-950 dark:text-zinc-50'>
               {product.name.slice(0, 10)}... <span className="text-sm text-zinc-500 dark:text-zinc-400">{product.price} {t("som")}</span>
-          </MorphingDialogTitle>
+            </MorphingDialogTitle>
             <MorphingDialogSubtitle className='text-zinc-700 dark:text-zinc-400'>
               {product.brand}
             </MorphingDialogSubtitle>
