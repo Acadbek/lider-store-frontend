@@ -74,20 +74,20 @@ const ProductSlug = () => {
   const container = React.useRef();
   const tl = React.useRef();
 
-  const toggleTimeline = () => {
-    tl.current.reversed(!tl.current.reversed());
-  };
+  // const toggleTimeline = () => {
+  //   tl.current.reversed(!tl.current.reversed());
+  // };
 
-  useGSAP(
-    () => {
-      const boxes = gsap.utils.toArray('.box');
-      tl.current = gsap
-        .timeline()
-        .to(boxes[0], { y: -500, x: 250 })
-        .reverse();
-    },
-    { scope: container }
-  );
+  // useGSAP(
+  //   () => {
+  //     const boxes = gsap.utils.toArray('.box');
+  //     tl.current = gsap
+  //       .timeline()
+  //       .to(boxes[0], { y: -500, x: 250 })
+  //       .reverse();
+  //   },
+  //   { scope: container }
+  // );
 
   const frameworks = [
     {
@@ -181,7 +181,6 @@ const ProductSlug = () => {
 
   const addToCartWithAnimation = () => {
     addToCart(product)
-    toggleTimeline()
     setAtClicked(true)
   }
   return (

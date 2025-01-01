@@ -7,7 +7,16 @@ import {
 import { Link } from "react-router-dom";
 import { Spotlight } from "../../ui/spotlight";
 
-const GenericCard = ({ gridCols = 3, products, title }) => {
+type Products = {
+  gridCols?: number
+  products: {
+    title: string
+    image: string
+  }[]
+  title: string
+}
+
+const GenericCard = ({ gridCols = 3, products, title }: Products) => {
   return (
     <div className="border border-zinc-100 bg-white rounded-[12px] dark:border-zinc-800 dark:bg-[#18181B]">
       <div className="flex gap-2 text-sm text-black dark:text-white mb-0 pl-2">

@@ -36,7 +36,7 @@ const Category = () => {
       <Navbar />
       <div className="grid grid-cols-12 gap-4 h-[100vh]">
         <div className="col-span-2 border-r px-3">
-          <Accordion type="multiple" collapsible="true" className="w-full">
+          <Accordion type="multiple" className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>Производитель</AccordionTrigger>
               <AccordionContent>

@@ -1,26 +1,55 @@
 import axios from "axios";
-import React from "react";
+import React, { ReactNode } from "react";
 
-export const ProductsContext = React.createContext([])
+interface Product {
+  name: string;
+  brand: string;
+  price: number;
+  image: string;
+}
 
-const ProductsProvider = ({ children }) => {
+interface ProductsContextType {
+  lovelyProducts: Product[];
+  products: Product[];
+  addToCart: (product: Product) => void;
+}
 
-  const [lovelyProducts, setLovelyProducts] = React.useState([{ "name": "Smartphone", "brand": "Apple", "price": 1300000, "image": "https://picsum.photos/id/29/200/360" }])
-  const [products, setProducts] = React.useState([])
+export const ProductsContext = React.createContext<ProductsContextType>({
+  lovelyProducts: [],
+  products: [],
+  addToCart: () => { },
+});
 
-  const addToCart = (product: object) => {
-    setLovelyProducts((prevProduct) => [...prevProduct, product])
-    console.log('Works', products);
-  }
+interface ProductsProviderProps {
+  children: ReactNode;
+}
+
+const ProductsProvider: React.FC<ProductsProviderProps> = ({ children }) => {
+
+  const [lovelyProducts, setLovelyProducts] = React.useState<Product[]>([
+    {
+      name: "Smartphone",
+      brand: "Apple",
+      price: 1300000,
+      image: "https://picsum.photos/id/29/200/360",
+    },
+  ]);
+
+  const [products, setProducts] = React.useState<Product[]>([]);
+
+  const addToCart = (product: Product) => {
+    setLovelyProducts((prevProducts) => [...prevProducts, product]);
+    console.log("Works", products);
+  };
 
   const fetchProduct = async () => {
     try {
-      const response = await axios('http://localhost:3000/products')
-      setProducts(response.data)
+      const response = await axios.get<Product[]>("http://localhost:3000/products");
+      setProducts(response.data);
     } catch (error) {
-      alert(error)
+      alert(error);
     }
-  }
+  };
 
   React.useEffect(() => {
     fetchProduct()

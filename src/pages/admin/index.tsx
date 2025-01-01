@@ -58,7 +58,7 @@ const chartConfig = {
 export function Statistics() {
   const [product, setProduct] = React.useState({ id: '', name: '', price: '', brand: '', image: '' })
 
-  const send = async (e) => {
+  const send = async (e: any) => {
     e.preventDefault()
     try {
       const res = await axios.post('http://localhost:3000/products', product)

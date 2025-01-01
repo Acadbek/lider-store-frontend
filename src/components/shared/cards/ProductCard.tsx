@@ -1,16 +1,19 @@
+import { Heart, ProductBag, Scales } from '@/components/icons/icons'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Heart, ProductBag, Scales } from '@/components/icons/icons'
-import { Link } from "react-router-dom"
-import React from "react"
-import { ProductsContext } from "@/store/products"
 import { Dialog, DialogTrigger } from "@/components/ui/dialog"
+import { ProductsContext } from "@/store/products"
+import React from "react"
+import { Link } from "react-router-dom"
 
 type ProductTypes = {
-  name: string,
-  brand: string,
-  price: number,
-  image: string
+  data: {
+    id: number
+    name: string
+    brand: string
+    price: string
+    image: string[]
+  }
 }
 
 const ProductCard = ({ data }: ProductTypes) => {
@@ -18,9 +21,23 @@ const ProductCard = ({ data }: ProductTypes) => {
 
   const { addToCart } = React.useContext(ProductsContext)
 
+  interface Product {
+    name: string;
+    brand: string;
+    price: number;
+    image: string;
+  }
+
   const saveToCartPage = () => {
-    addToCart(data)
-    setAtClicked(true)
+    const transformedProduct: Product = {
+      name: data.name,
+      brand: data.brand,
+      price: parseFloat(data.price),
+      image: Array.isArray(data.image) ? data.image[0] : data.image,
+    };
+
+    addToCart(transformedProduct);
+    setAtClicked(true);
   }
 
   return (
