@@ -39,9 +39,9 @@ import {
 import { cn } from "@/lib/utils";
 import { ProductsContext } from "@/store/products";
 import { formatPrice } from "@/utils";
-import { useGSAP } from '@gsap/react';
+// import { useGSAP } from '@gsap/react';
 import axios from "axios";
-import gsap from 'gsap';
+// import gsap from 'gsap';
 import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lightgallery.css';
@@ -54,7 +54,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
-gsap.registerPlugin(useGSAP);
+// gsap.registerPlugin(useGSAP);
 
 const ProductSlug = () => {
   const [activeImg, setActiveImg] = React.useState(1);
@@ -178,6 +178,7 @@ const ProductSlug = () => {
   //         }
   //     })
   // }
+  
 
   const addToCartWithAnimation = () => {
     addToCart(product)
