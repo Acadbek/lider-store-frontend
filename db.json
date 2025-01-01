@@ -134,6 +134,13 @@
       "price": "32432",
       "brand": "dsfdsf",
       "image": "https://cdn-images.farfetch-contents.com/22/71/33/15/22713315_53092218_1000.jpg"
+    },
+    {
+      "id": "Iphone 19 Pro",
+      "name": "Iphone 19 Pro",
+      "price": "123123123",
+      "brand": "Iphone",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0Ii1hizKKuaiJWvyhSXa2LTmGIu1ssZtCg&s"
     }
   ]
 }
