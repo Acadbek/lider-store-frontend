@@ -5,10 +5,10 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { HomeIcon } from "../icons/icons"
-import { useLocation } from "react-router-dom"
+} from "@/components/ui/breadcrumb";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+import { HomeIcon } from "../icons/icons";
 
 
 const Breadcrumb = () => {

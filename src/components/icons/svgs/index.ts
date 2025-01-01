@@ -1,11 +1,11 @@
-export { default as FaceBook } from "./FaceBook";
-export { default as Insta } from "./Insta";
 export { default as Archive } from "./Archive";
 export { default as Bag } from "./Bag";
 export { default as BurgerMenu } from "./BurgerMenu";
 export { default as Chandelier } from "./Chandelier";
-export { default as HeartBold } from "./HeartBold";
+export { default as FaceBook } from "./FaceBook";
 export { default as Heart } from "./Heart";
+export { default as HeartBold } from "./HeartBold";
+export { default as Insta } from "./Insta";
 export { default as Logo } from "./Logo";
 export { default as Map } from "./Map";
 export { default as Percent } from "./Percent";
