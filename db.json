@@ -2,145 +2,123 @@
   "products": [
     {
       "id": "1",
-      "name": "GOOGLE PIXEL 0.1",
-      "price": "1500000",
-      "brand": "PIXEL",
+      "name": "Смартфон Honor X7b Black 8/128GB",
+      "price": "2988000",
+      "brand": "Honor",
+      "category": "Smartphone",
       "image": [
-        "https://cdn.dxomark.com/wp-content/uploads/medias/post-176677/Google-Pixel-9-Pro-XL_featured-image-packshot-review-1024x691.png",
-        "https://lh3.googleusercontent.com/iDX_dCDAJGRiXqcityjN-gBNsd61CjS8DIfXohH30T2jmliG7ofzJiNRUY3TwEQAyTk5x2a--Jvk7smckEWckCTcMkFPEjSkKaA=s0",
-        "https://amateurphotographer.com/wp-content/uploads/sites/7/2024/08/google-pixel-9-pro-XL-in-hand-3-photo-JW-AP-IMG_20240107_120223.jpg?w=900",
-        "https://hips.hearstapps.com/hmg-prod/images/google-pixel-9-review-lead-66c8a74805258.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*"
+        "https://minapi.beemarket.uz/prod-media/productImages/thumbnails/medium/1717407574CasMUuwoMdqJ.webp",
+        "https://minapi.beemarket.uz/prod-media/productImages/thumbnails/medium/1717407357J5gfE2SwuuCq.webp",
+        "https://joybox.uz/wp-content/uploads/2024/06/1-1.jpg"
       ]
     },
     {
       "id": "2",
-      "name": "Tecno Spark GO 2024 3/64",
-      "price": "1118000",
-      "brand": "GOOGLE PIXEL 1",
+      "name": "Смартфон Samsung Galaxy A54 5G 8/256GB",
+      "price": "5079000",
+      "brand": "Samsung",
+      "category": "Smartphone",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FRSIYjfakhX8JC5ENtwJD.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FONPeKjbvt8MXsQYcwH1b.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FFF4jgvobPeXWc25ynLGI.png&w=1920&q=75"
+        "https://img.kwcdn.com/product/open/2024-07-21/1721530199042-09fafbe45a3840a88bc6510110650221-goods.jpeg?imageView2/2/w/800/q/70/format/webp",
+        "https://cdn.pixabay.com/photo/2018/03/15/11/08/phone-3222193_1280.jpg",
+        "https://cdn.pixabay.com/photo/2019/04/07/09/36/mobile-4110424_1280.jpg"
       ]
     },
     {
       "id": "3",
-      "name": "Телевизор Shivaki US32H4103",
-      "price": "1461000",
-      "brand": "Shivaki",
+      "name": "Ноутбук ASUS VivoBook 15 X1500EA",
+      "price": "7499000",
+      "brand": "ASUS",
+      "category": "Laptop",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FAugust2020%2F2x0X6O6EGV6qBCIttwHT.jpg&w=1920&q=75"
+        "https://img.kwcdn.com/product/fancy/b9264773-5953-447c-a704-5fad666bea47.jpg?imageView2/2/w/800/q/70/format/webp",
+        "https://cdn.pixabay.com/photo/2018/01/17/07/47/laptop-3087585_1280.jpg",
+        "https://cdn.pixabay.com/photo/2016/11/23/14/45/apple-1853250_1280.jpg"
       ]
     },
     {
       "id": "4",
-      "name": "Смартфон Honor X7b Black 8/128GB",
-      "price": "2988000",
-      "brand": "Honor",
+      "name": "Телевизор LG OLED55C1",
+      "price": "13590000",
+      "brand": "LG",
+      "category": "Television",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FMay2024%2Fr6kPGKYyfIPWDV8tp7C5.png&w=1920&q=75",
-        "https://ir.ozone.ru/s3/multimedia-1-q/c1000/6911943146.jpg",
-        "https://main-cdn.sbermegamarket.ru/big2/hlr-system/976/862/938/130/125/600015551439b10.jpeg"
+        "https://store.digitalworld-tech.com/image/cache/catalog/%20LG/lg%202/lg1/48GQ900-B.AMA-550x550w.jpg",
+        "https://cdn.pixabay.com/photo/2017/03/19/20/19/tv-2153323_1280.jpg",
+        "https://cdn.pixabay.com/photo/2014/09/02/17/10/tv-434162_1280.jpg"
       ]
     },
     {
       "id": "5",
-      "name": "Холодильник Ferre BCD275",
-      "price": "2999000",
-      "brand": "Ferre",
+      "name": "Смарт-часы Apple Watch Series 8",
+      "price": "4980000",
+      "brand": "Apple",
+      "category": "Wearable",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FWe8MmmWP9ypxianCaHlX.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FBG3upuP01IHunPjynQfS.png&w=1920&q=75"
+        "https://images.uzum.uz/cs7dli34nkdhfdv4ta6g/original.jpg",
+        "https://cdn.pixabay.com/photo/2020/02/16/18/36/smartwatch-4854726_1280.jpg",
+        "https://cdn.pixabay.com/photo/2015/01/02/20/27/clock-586327_1280.jpg"
       ]
     },
     {
       "id": "6",
-      "name": "Ноутбук HP 250 G9 9M3X6AT",
-      "price": "9588000",
-      "brand": "HP",
+      "name": "Планшет Xiaomi Pad 6 128GB",
+      "price": "4690000",
+      "brand": "Xiaomi",
+      "category": "Tablet",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FOctober2024%2FNkzWupHuKIxuZsk6KYT7.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FOctober2024%2FVdF5Bca2PgXMO3wGKD0p.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FOctober2024%2FSv8X3lpPyuucZfNCylaB.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FOctober2024%2Fuwd2njugJWFIXL4lMfjZ.png&w=1920&q=75"
+        "https://img.kwcdn.com/product/fancy/b7a74eef-7355-48cc-8a05-1fe4426803be.jpg?imageView2/2/w/800/q/70/format/webp",
+        "https://cdn.pixabay.com/photo/2016/11/29/09/19/ipad-1868045_1280.jpg",
+        "https://cdn.pixabay.com/photo/2017/01/22/19/54/tablet-2004488_1280.jpg"
       ]
     },
     {
       "id": "7",
-      "name": "Ноутбук Acer TravelMate NX.VHSER.00A",
-      "price": "4428000",
-      "brand": "Acer",
+      "name": "Наушники Sony WH-1000XM5",
+      "price": "3590000",
+      "brand": "Sony",
+      "category": "Audio",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FTuxMGkShuR9DBW24D1xO.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2Funo1rFfoHsId0uAMYbH7.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJune2024%2FRyoJJsR5nT8R8YAZkZ48.png&w=1920&q=75"
+        "https://minapi.beemarket.uz/prod-media/productImages/thumbnails/medium/1720771959S3QQH5MUtaG4.webp",
+        "https://cdn.pixabay.com/photo/2018/01/11/21/41/headphones-3070180_1280.jpg",
+        "https://cdn.pixabay.com/photo/2018/01/15/07/51/headphones-3085682_1280.jpg"
       ]
     },
     {
       "id": "8",
-      "name": "Ноутбук 15,6 Lenovo V15-IGL 82C3001NAK",
-      "price": "4194000",
-      "brand": "Lenovo",
+      "name": "Игровая консоль PlayStation 5",
+      "price": "10500000",
+      "brand": "Sony",
+      "category": "Gaming",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJanuary2024%2Fa4scNVdlc84AzorJshDU.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJanuary2024%2FgQ0WYI5YM8UMGW6AD1l3.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FJanuary2024%2FuLj6jx5NiMN1weGdRAZO.png&w=1920&q=75"
+        "https://img.kwcdn.com/product/fancy/7a74c80e-1dc5-48b0-9444-f4d4c1454d01.jpg?imageView2/2/w/800/q/70/format/webp",
+        "https://cdn.pixabay.com/photo/2020/11/09/11/09/controller-5720646_1280.jpg",
+        "https://cdn.pixabay.com/photo/2020/11/26/18/22/playstation-5777981_1280.jpg"
       ]
     },
     {
       "id": "9",
-      "name": "Стиральная машина Premier PRM70F1202LIN/G",
-      "price": "4799000 ",
-      "brand": "Premier",
+      "name": "Фотокамера Canon EOS 2000D",
+      "price": "6990000",
+      "brand": "Canon",
+      "category": "Camera",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FNovember2024%2F9k5eGbsFdNzpQAWqnw5c.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FNovember2024%2FaAxv13M23YArCjsU0SGX.png&w=1920&q=75"
+        "https://img.kwcdn.com/product/fancy/a18dfdca-6807-45ac-90e0-eabbd2e37fa3.jpg?imageView2/2/w/800/q/70/format/webp",
+        "https://cdn.pixabay.com/photo/2016/06/15/14/30/camera-1452623_1280.jpg",
+        "https://cdn.pixabay.com/photo/2016/06/16/21/07/camera-1460014_1280.jpg"
       ]
     },
     {
       "id": "10",
-      "name": "Телевизор Premier 32PRM700 S",
-      "price": "1499000",
-      "brand": "Premier",
+      "name": "Холодильник Samsung RB34T675",
+      "price": "8990000",
+      "brand": "Samsung",
+      "category": "Appliance",
       "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FMarch2022%2FPp7c5vynus06Pd8rLVSV.jpg&w=1920&q=75",
-        "https://adamag.ru/image/cache/catalog/sync1c/ut-00031574-700x700.jpg",
-        "https://adamag.ru/image/cache/catalog/sync1c/ut-00031574-4-700x700.jpg"
+        "data:image/webp;base64,UklGRtoEAABXRUJQVlA4IM4EAAAwMwCdASqWAAYBPj0ci0OiIaEVyTTYIAPEtIHYD4w6FRTJ2wFW+DuLppIQg6+Hz+9NiMKIiJBVE3BCAc/GrLFiVuYGcS6BBinyvEbC4FEchrg2bJ8FSHCzJUoxuZOwRiN2Me+/gR8y2yQGAXVA+pRITRdFC05Oi2INoCK4bAyGFC4yNnb3aYuplRipgsJdR6g5MEiwB+pTubTvUI9Q1NfE4Icqwd5S/D1nDpYJ4IYEHy0yFWp27tNoSV6yPxnUI4Lxs1R0PKKigCPV4mbQBfZfjTIbiaeOav7NXhb+ZYjtpNKbXlj2OGb5SHFPEI7ZVvQw2bKmGrQUrPggEmYbBbmzi/SIzrCIDK55A/Vrmx3XtK8GBx38HE1yDTuO4YYYKb+bBcjH3qjY4goLzyecc02MzUiboGR3gImWg25y+zJ7zutJhptHOv5JZUUa/Es4QXacOw1jLum37YfqHipvCfNSJakEMChKeqsWn0P4mcu0y8LDjnUE2GJhQjTA5XaT2Ai6wC09DQnsaieu864oE1GIRtxkXAVAdqZGxqr8HlK8ZlAAAP79gU50yWngXi72fN70scnYVL27hfeeE6SoLTIjy/ltQXReOeSKyHAGh6KPExoiDwTBySasO5vsl9edcMN9suB+fT2VA5l70HaS27LaXuI6GWr8qVheWOj8S+5UpYeOMkAm4nVNH5kSxgn6FLumfXRZPf4uUBUlFchykxOJFDF9xfgZJYn9eCU4wep5xyirubgCbtKa7zFVqj1IfMHrRxOsRFRVVRp1da7jHQcHAI5Z/9/gtdVFpx4NSmSnbk7jmZkUhBarx0wf9n9h+42L1vIrZHdQmpMVu9a6+c5uTyJ69SYtwwF+EgDZ2ZVraICblGBKdBnsi1U/BtV3f7sjvN6tz0SO3NX4HZ7ELdo1Z0YHNFW9Q+JYuwt/KygYl3KjNjc93b8LfXZa1Y9dPxw8NIGtdVGdK+09Pic1t3qO9KkgRpwDm3VJTrKqy+kH3H6sr9TmoqMi5r1a/bfNRC5YHvWM/R3ZdP8Yvnz7Rm5OnRbYH6gEZwkRIlp6hUvcCooPkyVu6puNISYvnRkkxFqWcZ+u8vkoApOTb34kgpxVbISiq4diBRJOuWYLcazlTzrXCm3Vy7A4PS3w8h763ykDm7TTujMlOkZcL27dmTlvYRX2vjVmzaUFU4qGl1htDxHwgDTGrRK44D5lApmQx+hmv7oh0D5oxxYyljDrK6NxuDDM+L/xOpWxu9YYzm/i7OjLvY0YLIzG1Ufu2JFN9uZrY56/vTkakJluwHHn07w2p3UYRWRglSWe8XPmBQk229onkZcfK5x8fB4QkLVQ4TpFHtx13V3SUrhgbVGP89w4it1rpgZXEuJ5KhTFTeSS+MC8ykpSy1HKGZ+SDeKokosGlIneAXFp1nNlWQeDyevx0Tyt6wjF3OmoQpZXaEg9g3e3BFLz5lHloiaqFmIwX9Tp/lXb1J5LxBhUSW/zXS4qjdgQwXmge7HSQdrFC7C4Z/UMiYA3s/BEbLQF9nywA+7kMpbwysKfGExmwCH1vcLtoIY0XGmu0fILRe/cltX3/Y7Kf7f6Q1w3ZMKe0dYBRb8gyBFEJLZmESq+IFs+aQ1rcbGns/JFwuwW1iSoAAA=",
+        "https://cdn.pixabay.com/photo/2017/02/01/20/14/kitchen-2039578_1280.jpg",
+        "https://cdn.pixabay.com/photo/2016/11/19/13/30/kitchen-1837178_1280.jpg"
       ]
-    },
-    {
-      "id": "11",
-      "name": "Пылесос Ferre VC-1108 C (синий)",
-      "price": "119900",
-      "brand": "Ferre",
-      "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FDecember2024%2F4Rhh0enNeAglf2ekcCiX.png&w=1920&q=75",
-        "http   s://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FDecember2024%2Fkx6gJ9VTA2gOZyXYFfSW.png&w=1920&q=75",
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FDecember2024%2FIyjYgroj9Yt5bFXMooSk.png&w=1920&q=75"
-      ]
-    },
-    {
-      "id": "12",
-      "name": "Утюг Shivaki SH-SI-9518",
-      "price": "370000",
-      "brand": "Shivaki",
-      "image": [
-        "https://idea.uz/_next/image?url=https%3A%2F%2Fapi.idea.uz%2Fstorage%2Fproducts%2FNovember2022%2F6WX9ixu7geux9rhvzmx5.png&w=1920&q=75"
-      ]
-    },
-    {
-      "id": "sdfdsf",
-      "name": "sdfsdf",
-      "price": "32432",
-      "brand": "dsfdsf",
-      "image": "https://cdn-images.farfetch-contents.com/22/71/33/15/22713315_53092218_1000.jpg"
-    },
-    {
-      "id": "Iphone 19 Pro",
-      "name": "Iphone 19 Pro",
-      "price": "123123123",
-      "brand": "Iphone",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0Ii1hizKKuaiJWvyhSXa2LTmGIu1ssZtCg&s"
     }
   ]
 }

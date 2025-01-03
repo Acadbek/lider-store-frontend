@@ -42,16 +42,18 @@ const ProductCard = ({ data }: ProductTypes) => {
 
   return (
     <>
-      <Card>
+      <Card className='shadow-none'>
         <CardContent className="relative">
           <div className="flex items-center gap-2 absolute right-2 top-2">
             <Scales className="product-svg cursor-pointer" width={20} />
             <Heart className="product-svg cursor-pointer" width={20} />
           </div>
-          <img className="w-[160px] h-[160px] object-cover" width={160} height={160} src={data.image[0]} alt="" />
+          <div className="relative h-48 w-full">
+            <img className="object-cover" width={160} height={160} src={data.image[0]} alt="" />
+          </div>
           <p className="font-bold text-[#20A752]">{data.price}</p>
           <Link to={`/product/${data.id}`}>
-            <h2 className="font-bold">{data.name}</h2>
+            <h2 className="font-bold text-black dark:text-gray-200 hover:text-gray-700">{data.name}</h2>
           </Link>
           <p className="text-gray-500 font-bold text-[13px]">{data.brand}</p>
 
