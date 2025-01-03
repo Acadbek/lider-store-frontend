@@ -70,7 +70,7 @@ const Category = () => {
 
   const fetchFilteredProducts = async (filters) => {
     // 'filters' obyektini URL query stringga aylantirish
-    const queryString = new URLSearchParams({ brand: selectedModels.join(',') }).toString();
+    const queryString = new URLSearchParams(filters).toString();
     console.log('Query String:', queryString);
     // Masalan: Agar filters = { brand: 'Apple', minPrice: '1000' } bo‘lsa, bu "brand=Apple&minPrice=1000" ko‘rinishida chiqadi
 
@@ -102,9 +102,9 @@ const Category = () => {
   const submit = async (e) => {
     e.preventDefault()
     try {
-      fetchFilteredProducts(models)
+      fetchFilteredProducts({ brand: selectedModels })
     } catch (error) {
-
+      alert(error.message)
     }
   }
 
