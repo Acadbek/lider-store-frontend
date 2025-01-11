@@ -160,7 +160,7 @@ const ProductSlug = () => {
   }
 
   React.useEffect(() => {
-    getSingleProduct()
+    // getSingleProduct()
   }, [id])
 
 
