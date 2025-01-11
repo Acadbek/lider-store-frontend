@@ -181,7 +181,7 @@ const ProductSlug = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="capitalize">{product.name}</BreadcrumbPage>
+              <BreadcrumbPage className="capitalize">{product?.name}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
