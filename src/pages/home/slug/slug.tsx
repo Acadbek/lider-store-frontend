@@ -52,10 +52,18 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
+interface Product {
+  id: number;
+  name: string;
+  brand: string;
+  price: number;
+  image: string[];
+}
+
 const ProductSlug = () => {
   const [activeImg, setActiveImg] = React.useState(1);
   const [atClicked, setAtClicked] = React.useState<boolean>(false)
-  const [product, setProduct] = React.useState({});
+  const [product, setProduct] = React.useState<Product | null>(null);
   const [buyType, setBuyType] = React.useState('Полная оплата');
   const [popoverContentStatus, setPopoverContentStatus] = React.useState(true);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -94,37 +102,37 @@ const ProductSlug = () => {
       name: "Wireless Headphones",
       brand: "SoundPro",
       price: 49.99,
-      image: "https://example.com/images/headphones.jpg"
+      image: ["https://example.com/images/headphones.jpg"]
     },
     {
       name: "Smartphone",
       brand: "Apple",
       price: 999.99,
-      image: "https://example.com/images/iphone.jpg"
+      image: ["https://example.com/images/iphone.jpg"]
     },
     {
       name: "Laptop",
       brand: "Dell",
       price: 1299.99,
-      image: "https://example.com/images/laptop.jpg"
+      image: ["https://example.com/images/laptop.jpg"]
     },
     {
       name: "Wireless Headphones",
       brand: "SoundPro",
       price: 49.99,
-      image: "https://example.com/images/headphones.jpg"
+      image: ["https://example.com/images/headphones.jpg"]
     },
     {
       name: "Smartphone",
       brand: "Apple",
       price: 999.99,
-      image: "https://example.com/images/iphone.jpg"
+      image: ["https://example.com/images/iphone.jpg"]
     },
     {
       name: "Laptop",
       brand: "Dell",
       price: 1299.99,
-      image: "https://example.com/images/laptop.jpg"
+      image: ["https://example.com/images/laptop.jpg"]
     }
   ]
 
@@ -190,14 +198,20 @@ const ProductSlug = () => {
                   className="w-full max-w-xs"
                 >
                   <CarouselContent className="h-[300px] mt-1">
-                    {product.image && product.image.map((img, index) => (
+                    {product?.image?.map((img: string, index: number) => (
                       <CarouselItem
                         onClick={() => setActiveImg(index + 1)}
                         key={index}
                         className="w-[90px] p-1 rounded-lg border-[2px] cursor-pointer mt-2"
-                        style={{ border: activeImg === (index + 1) && '2px solid #16a34a' }}
+                        style={{
+                          border: activeImg === index + 1 ? '2px solid #16a34a' : undefined,
+                        }}
                       >
-                        <img className="w-[90px] h-[90px] object-cover rounded-lg" src={img} alt="" />
+                        <img
+                          className="w-[90px] h-[90px] object-cover rounded-lg"
+                          src={img}
+                          alt={`Product Image ${index + 1}`}
+                        />
                       </CarouselItem>
                     ))}
                   </CarouselContent>
@@ -209,7 +223,7 @@ const ProductSlug = () => {
                   plugins={[lgThumbnail, lgFullscreen, lgZoom]}
                   fullScreen={true}
                 >
-                  {product.image && product.image.map((img, index) => (
+                  {product?.image && product.image.map((img: string, index: number) => (
                     activeImg === (index + 1) && <a href={img}>
                       <img className="h-[300px] w-[500px] object-cover" alt="img1" src={img} />
                     </a>
@@ -250,7 +264,7 @@ const ProductSlug = () => {
                 </TabsList>
                 <TabsContent className="mt-8" value="account">
                   <p className={allPropertiesIsVisible === false ? `line-clamp-4` : ''}>
-                    Смартфон <strong>{product.name}</strong> — модель в корпусе из пластика. Работа производится на базе ОС Android версии 13.0. Возможна установка двух карт формата nano-SIM. Восьмиядерный процессор UMS9230 от Unisoc с частотой 8х1,6 ГГц и оперативная память на 3 Гб не допускают задержек во время запуска приложений и переключения между ними. Хранение файлов осуществляется во встроенной памяти объемом 64 Гб, которую можно расширять посредством карты microSD/TF (1 Тб).
+                    Смартфон <strong>{product?.name}</strong> — модель в корпусе из пластика. Работа производится на базе ОС Android версии 13.0. Возможна установка двух карт формата nano-SIM. Восьмиядерный процессор UMS9230 от Unisoc с частотой 8х1,6 ГГц и оперативная память на 3 Гб не допускают задержек во время запуска приложений и переключения между ними. Хранение файлов осуществляется во встроенной памяти объемом 64 Гб, которую можно расширять посредством карты microSD/TF (1 Тб).
                     <span className="!block mt-4">Устройство оборудовано сенсорным экраном типа LCD диагональю 6,6 дюйма разрешением 1612х720 пикселей. Максимальная частота обновления составляет 90 Гц. Смартфон поддерживает стандарты сотовой связи 2G, 3G, 4G. Быструю беспроводную связь с устройствами с целью передачи данных обеспечивает модуль Bluetooth версии 5.0, Wi-Fi гарантирует быстрый выход в Сеть.</span>
                   </p>
 

@@ -6,7 +6,7 @@ interface Product {
   name: string;
   brand: string;
   price: number;
-  image: string;
+  image: string[];
 }
 
 interface ProductsContextType {
@@ -35,7 +35,7 @@ const ProductsProvider: React.FC<ProductsProviderProps> = ({ children }) => {
       name: "Smartphone",
       brand: "Apple",
       price: 1300000,
-      image: "https://picsum.photos/id/29/200/360",
+      image: ["https://picsum.photos/id/29/200/360"],
     },
   ]);
 

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 
 type ProductTypes = {
   data: {
-    id: number
+    id?: number
     name: string
     brand: string
     price: string
