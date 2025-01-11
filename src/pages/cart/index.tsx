@@ -20,7 +20,7 @@ interface Product {
   name: string;
   brand: string;
   price: number;
-  image: string;
+  image: string[];
 }
 
 const Cart = () => {
@@ -57,7 +57,7 @@ const Cart = () => {
                 <div className="flex items-center gap-8">
                   <img
                     className="w-[100px] h-[100px] object-cover rounded-full"
-                    src={pr.image}
+                    src={pr.image[0]}
                     alt={pr.name}
                   />
                   <div>

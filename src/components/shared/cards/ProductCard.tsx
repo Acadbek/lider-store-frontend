@@ -6,14 +6,28 @@ import { ProductsContext } from "@/store/products"
 import React from "react"
 import { Link } from "react-router-dom"
 
+interface Product {
+  id: number;
+  name: string;
+  brand: string;
+  price: number;
+  image: string[];
+}
+
 type ProductTypes = {
   data: {
     id?: number
     name: string
     brand: string
-    price: string
+    price: number
     image: string[]
   }
+}
+
+interface ProductsContextType {
+  lovelyProducts: Product[];
+  products: Product[];
+  addToCart: (product: Product) => void;
 }
 
 const ProductCard = ({ data }: ProductTypes) => {
@@ -21,24 +35,20 @@ const ProductCard = ({ data }: ProductTypes) => {
 
   const { addToCart } = React.useContext(ProductsContext)
 
-  interface Product {
-    name: string;
-    brand: string;
-    price: number;
-    image: string;
-  }
-
   const saveToCartPage = () => {
+    if (!data.id) return;
+
     const transformedProduct: Product = {
+      id: data.id,
       name: data.name,
       brand: data.brand,
-      price: parseFloat(data.price),
-      image: Array.isArray(data.image) ? data.image[0] : data.image,
+      price: data.price,
+      image: Array.isArray(data.image) ? data.image : [data.image],
     };
 
     addToCart(transformedProduct);
     setAtClicked(true);
-  }
+  };
 
   return (
     <>
