@@ -88,11 +88,11 @@ const Navbar = () => {
               {t('Все')}
             </Button>
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent className="border-none">
             Hello
           </SheetContent>
         </Sheet>
-        <div className="group [&>a]:text-sm [&>a]:font-[500] [&>a]:px-2 [&>a]:py-1">
+        <div className="group flex items-center gap-4 [&>a]:text-sm [&>a]:font-[500] [&>a]:px-2 [&>a]:py-1">
           <Link
             to="/"
             className="hover:cursor-pointer hover:text-primary"

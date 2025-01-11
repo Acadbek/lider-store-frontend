@@ -6,7 +6,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/multi-slider";
@@ -22,12 +21,14 @@ const modelsInitialState = [
   "Yandex", "Fenda", "Ssmart", "Sonor",
 ];
 
+type FilterParams = Record<string, string | number | string[]>;
+
 const Category = () => {
   const [models, setModels] = React.useState(modelsInitialState.slice(0, 5));
   const [minPrice, setMinPrice] = React.useState<number>(0);
   const [maxPrice, setMaxPrice] = React.useState<number>(100);
   const [products, setProducts] = React.useState([]);
-  const [selectedModels, setSelectedModels] = React.useState([]); // Tanlangan modellarga tegishli state
+  const [selectedModels, setSelectedModels] = React.useState<string[]>([]); // Tanlangan modellarga tegishli state
 
   const getProducts = async () => {
     try {
@@ -35,18 +36,16 @@ const Category = () => {
       setProducts(responsive.data)
 
     } catch (error) {
-      alert(error.message)
+      if (error instanceof Error) {
+        alert(error.message)
+      } else {
+        alert('An unknown error occurred.')
+      }
     }
-  }
-
-  const getIdeaData = async () => {
-    const response = await axios.get('https://api.idea.uz/api/v2/products?quantity=6')
-    console.log(response.data);
   }
 
   React.useEffect(() => {
     // getProducts()
-    // getIdeaData()
   }, [])
 
   useScrollToTop();
@@ -73,30 +72,22 @@ const Category = () => {
     setMaxPrice(value >= 0 ? value : 0);
   };
 
-  const fetchFilteredProducts = async (filters) => {
-    // 'filters' obyektini URL query stringga aylantirish
-    const queryString = new URLSearchParams(filters).toString();
+  const fetchFilteredProducts = async (filters: FilterParams) => {
+    const queryString = new URLSearchParams(filters as Record<string, string>).toString();
     console.log('Query String:', queryString);
-    // Masalan: Agar filters = { brand: 'Apple', minPrice: '1000' } bo‘lsa, bu "brand=Apple&minPrice=1000" ko‘rinishida chiqadi
 
-    // Serverga fetch orqali so‘rov yuborish
     const response = await fetch(`http://localhost:3000/products?${queryString}`);
     console.log('Response object:', response);
-    // Bu fetch qilingan javob obyektini chiqaradi, bunda status, headers va boshqa ma'lumotlar bor.
 
-    // Javobni JSON formatiga aylantirish
     const data = await response.json();
     console.log('Fetched Data:', data);
-    // Bu serverdan olingan ma'lumotlarni konsolda ko‘rsatadi. Masalan: `[ { id: 1, name: "iPhone", price: 1000 }, ... ]`
 
-    // Mahsulotlar holatini (state) yangilash
     setProducts(data);
     console.log('Products state updated:', data);
-    // Bu holatga (state) yangi mahsulotlar ro‘yxati o‘tkazilganini ko‘rsatadi.
   };
 
-  const handleModelChange = (model) => {
-    setSelectedModels((prevSelectedModels) => {
+  const handleModelChange = (model: string) => {
+    setSelectedModels((prevSelectedModels: string[]) => {
       const updatedSelectedModels = prevSelectedModels.includes(model)
         ? prevSelectedModels.filter((item) => item !== model)
         : [...prevSelectedModels, model];
@@ -105,12 +96,16 @@ const Category = () => {
     });
   };
 
-  const submit = async (e) => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      fetchFilteredProducts({ brand: selectedModels })
+      await fetchFilteredProducts({ brand: selectedModels })
     } catch (error) {
-      alert(error.message)
+      if (error instanceof Error) {
+        alert(error.message)
+      } else {
+        alert('An unknown error occurred.')
+      }
     }
   }
 
@@ -134,7 +129,7 @@ const Category = () => {
                           checked={selectedModels.includes(model)}  // Tanlangan modellarga asoslangan holda tekshiruv
                           onCheckedChange={() => handleModelChange(model)}  // Tanlash va bekor qilish uchun onChange
                         />
-                        <label className="select-none" htmlFor={model}>
+                        <label className="select-none cursor-pointer" htmlFor={model}>
                           {model}
                         </label>
                       </div>
@@ -187,21 +182,10 @@ const Category = () => {
                   </div>
                 </AccordionContent>
               </AccordionItem>
-
-              {/* Animation Section */}
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Is it animated?</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It&apos;s animated by default, but you can disable it if you
-                  prefer.
-                </AccordionContent>
-              </AccordionItem>
             </Accordion>
-            <Button variant='ghost' type="submit">Filter</Button>
           </form>
         </div>
         <div className="col-span-8">
-          {JSON.stringify(selectedModels)}
           <div className="grid grid-cols-4 gap-3">
             {products.map((item, idx) => (
               <ProductCard key={idx} data={item} />

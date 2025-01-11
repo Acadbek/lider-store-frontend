@@ -1,4 +1,4 @@
-import { CarIcon, HomeIcon, SecurityIcon } from "@/components/icons/icons";
+import { HomeIcon } from "@/components/icons/icons";
 import ProductCard from "@/components/shared/cards/ProductCard";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
@@ -39,9 +39,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ProductsContext } from "@/store/products";
 import { formatPrice } from "@/utils";
-// import { useGSAP } from '@gsap/react';
 import axios from "axios";
-// import gsap from 'gsap';
 import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lightgallery.css';
@@ -53,8 +51,6 @@ import { Check, ChevronsUpDown } from "lucide-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-
-// gsap.registerPlugin(useGSAP);
 
 const ProductSlug = () => {
   const [activeImg, setActiveImg] = React.useState(1);
@@ -73,21 +69,6 @@ const ProductSlug = () => {
 
   const container = React.useRef();
   const tl = React.useRef();
-
-  // const toggleTimeline = () => {
-  //   tl.current.reversed(!tl.current.reversed());
-  // };
-
-  // useGSAP(
-  //   () => {
-  //     const boxes = gsap.utils.toArray('.box');
-  //     tl.current = gsap
-  //       .timeline()
-  //       .to(boxes[0], { y: -500, x: 250 })
-  //       .reverse();
-  //   },
-  //   { scope: container }
-  // );
 
   const frameworks = [
     {
@@ -163,26 +144,13 @@ const ProductSlug = () => {
     // getSingleProduct()
   }, [id])
 
-
-  // const monthlyPrice = () => {
-  //     frameworks.forEach(v => {
-  //         switch (v.value) {
-  //             case 'Полная оплата':
-  //                 return ''
-  //                 break;
-  //             case '6-month':
-  //                 return formatPrice(price / 6).slice(0, 7)
-  //                 break;
-  //             default:
-  //                 break;
-  //         }
-  //     })
-  // }
-  
-
   const addToCartWithAnimation = () => {
-    addToCart(product)
-    setAtClicked(true)
+    if (product) {
+      addToCart(product);
+      setAtClicked(true);
+    } else {
+      console.error("Product is undefined or missing required properties.");
+    }
   }
   return (
     <>
@@ -209,36 +177,6 @@ const ProductSlug = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div className="grid grid-cols-4 bg-pink-600 p-3 rounded-lg mt-6">
-          <div className="flex items-center gap-2">
-            <SecurityIcon />
-            <div>
-              <p className="font-bold text-[14px] text-white">Официальная гарантия</p>
-              <p className="text-[14px] text-white">на все товары</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <CarIcon />
-            <div>
-              <p className="font-bold text-[14px] text-white">Официальная гарантия</p>
-              <p className="text-[14px] text-white">на все товары</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <SecurityIcon />
-            <div>
-              <p className="font-bold text-[14px] text-white">Официальная гарантия</p>
-              <p className="text-[14px] text-white">на все товары</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <SecurityIcon />
-            <div>
-              <p className="font-bold text-[14px] text-white">Официальная гарантия</p>
-              <p className="text-[14px] text-white">на все товары</p>
-            </div>
-          </div>
-        </div>
         <div className="grid grid-cols-4 gap-3 mt-8">
           <div className="col-span-3 ">
             {/* <h2 className="text-3xl pl-8 mb-8 font-semibold">{productName}</h2> */}
@@ -405,7 +343,11 @@ const ProductSlug = () => {
                     <div className="box gradient-blue">Box 3</div>
                   </section> */}
                   <Button onClick={addToCartWithAnimation}>
-                    {!atClicked ? 'Добавлено в корзину' : <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z" /></svg>}
+                    {!atClicked ? 'Добавлено в корзину' : (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z" />
+                      </svg>
+                    )}
                   </Button>
                   <Button>Купить</Button>
                 </div>

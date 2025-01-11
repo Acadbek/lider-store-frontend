@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { ReactNode } from "react";
 
 interface Product {
+  id: number;
   name: string;
   brand: string;
   price: number;
@@ -17,7 +18,9 @@ interface ProductsContextType {
 export const ProductsContext = React.createContext<ProductsContextType>({
   lovelyProducts: [],
   products: [],
-  addToCart: () => { },
+  addToCart: (product: Product) => {
+    console.log(`${product.name} added to cart`);
+  },
 });
 
 interface ProductsProviderProps {
@@ -28,6 +31,7 @@ const ProductsProvider: React.FC<ProductsProviderProps> = ({ children }) => {
 
   const [lovelyProducts, setLovelyProducts] = React.useState<Product[]>([
     {
+      id: 1,
       name: "Smartphone",
       brand: "Apple",
       price: 1300000,
