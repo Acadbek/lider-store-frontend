@@ -118,9 +118,9 @@ const Category = () => {
     <>
       <Navbar />
       <div className="grid grid-cols-12 gap-4 h-[100vh]">
-        <div className="mySidebar col-span-2 border-r dark:border-r-gray-900 px-3 !sticky top-0 h-[100vh] overflow-y-auto self-start">
+        <div className="sidebar col-span-2 border-r dark:border-r-gray-900 px-3 !sticky top-0 h-[100vh] overflow-y-auto self-start">
           <form onSubmit={submit}>
-            <Accordion type="multiple" defaultValue="item-1" className="w-full">
+            <Accordion type="multiple" className="w-full">
               {/* Manufacturer Section */}
               <AccordionItem value="item-1">
                 <AccordionTrigger>Производитель</AccordionTrigger>

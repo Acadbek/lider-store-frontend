@@ -79,14 +79,13 @@
 }
 
 .category-card:hover {
-} 
+}
 
 .date {
   color: var(--secondary);
   font-size: 14px;
   text-transform: uppercase;
 }
-
 
 .avatar {
   background: var(--divider);
@@ -273,3 +272,20 @@ p {
     padding: 0;
   }
 }
+
+.sidebar::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+}
+
