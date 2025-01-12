@@ -59,13 +59,13 @@ const ProductCard = ({ data }: ProductTypes) => {
             <Heart className="product-svg cursor-pointer" width={20} />
           </div>
           <div className="relative h-48 w-full">
-            <img className="object-cover" width={160} height={160} src={data.image[0]} alt="" />
+            <img className="object-cover" width={160} height={160} src={data?.image[0]} alt="" />
           </div>
-          <p className="font-bold text-[#20A752]">{data.price}</p>
-          <Link to={`/product/${data.id}`}>
-            <h2 className="font-bold text-black dark:text-gray-200 hover:text-gray-700">{data.name}</h2>
+          <p className="font-bold text-[#20A752]">{data?.price}</p>
+          <Link to={`/product/${data?.id}`}>
+            <h2 className="font-bold text-black dark:text-gray-200 hover:text-gray-700">{data?.name}</h2>
           </Link>
-          <p className="text-gray-500 font-bold text-[13px]">{data.brand}</p>
+          <p className="text-gray-500 font-bold text-[13px]">{data?.brand}</p>
 
           <div className="grid grid-cols-4 gap-2 mt-4">
             <Button variant="outline" className="col-span-3">Buy now</Button>

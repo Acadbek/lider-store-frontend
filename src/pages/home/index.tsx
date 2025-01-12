@@ -4,15 +4,11 @@ import categoryImage2 from '@/assets/images/lider-condi.png';
 import categoryImage6 from '@/assets/images/lider-darmol.png';
 import categoryImage4 from '@/assets/images/lider-ice.png';
 import categoryImage1 from '@/assets/images/lider-phone.png';
-import Hero from "@/components/shared/Hero";
-import Navbar from "@/components/shared/Navbar";
-import ProductCard from "@/components/shared/cards/Card";
-import GenericCard from "@/components/shared/cards/GenericCard";
+import { Carousel, GenericCard, Hero, Navbar } from "@/components/shared";
 import { Card, CardTitle } from "@/components/ui/card";
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
-import { Carousel, CarouselContent, CarouselItem, CarouselNavigation } from "../../components/ui/carousel";
 
 const Home = () => {
   const [hoveredIndex, setHoveredIndex] = React.useState<number | null>();
@@ -229,24 +225,13 @@ const Home = () => {
           <h2 className="text-black dark:text-white mt-0">Here come Holiday Specials</h2>
           <Link to='' className="text-primary hover:underline">More...</Link>
         </div>
-        <Carousel>
-          <CarouselContent>
-            {carouselImages().map((item, index) => (
-              <CarouselItem key={index} className='basis-1/6'>
-                <Link to='/category'>
-                  <img className="w-[210px] h-[131px] object-cover" src={item.image} alt="" />
-                </Link>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselNavigation alwaysShow left="left-[-5%]" width="w-[110%]" />
-        </Carousel>
+        <Carousel products={carouselImages()} />
       </Card>
       <div className="container mx-auto">
         <section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6">
-          {products.map((product) => (
+          {/* {products.map((product) => (
             <ProductCard key={product.name} product={product} />
-          ))}
+          ))} */}
         </section>
         <section>
           <h2 className="text-2xl font-bold mt-12 text-black dark:text-white">{t("Акции и видеообзоры")}</h2>
