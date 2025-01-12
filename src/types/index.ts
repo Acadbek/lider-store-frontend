@@ -14,3 +14,14 @@ export type Products = {
   }[]
   title: string
 }
+
+export type ProductTypes = {
+  data: {
+    id?: number
+    name: string
+    brand: string
+    rating: number
+    price: number
+    image: string[]
+  }
+}

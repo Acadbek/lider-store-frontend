@@ -1,7 +1,7 @@
-import { Card, CategoryCard, GenericCard, ProductCard } from './cards';
+import { CategoryCard, GenericCard, MorphingCard, ProductCard } from './cards';
 import Carousel from "./carousel";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 
-export { Card, Carousel, CategoryCard, GenericCard, Hero, Navbar, ProductCard };
+export { Carousel, CategoryCard, GenericCard, Hero, MorphingCard, Navbar, ProductCard };
 

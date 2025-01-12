@@ -14,18 +14,12 @@ import {
   MorphingDialogTitle,
   MorphingDialogTrigger,
 } from '@/components/ui/morphing-dialog';
+import { ProductTypes } from "@/types";
 import { t } from "i18next";
 import { PlusIcon } from 'lucide-react';
 import { Link } from "react-router-dom";
 
-type Product = {
-  name: string
-  brand: string
-  price: number
-  image: string
-}
-
-export default function Card({ product }: { product: Product }) {
+export default function MorphingCard({ data }: ProductTypes) {
   return (
     <MorphingDialog
       transition={{
@@ -41,17 +35,17 @@ export default function Card({ product }: { product: Product }) {
         className='flex max-w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
       >
         <MorphingDialogImage
-          src={product.image}
+          src={data?.image[0]}
           alt='A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood.'
           className='h-48 w-full object-cover'
         />
         <div className='flex flex-grow flex-row items-end justify-between p-2'>
           <div>
             <MorphingDialogTitle className='text-zinc-950 dark:text-zinc-50'>
-              {product.name.slice(0, 10)}... <span className="text-sm text-zinc-500 dark:text-zinc-400">{product.price} {t("som")}</span>
+              {data?.name?.slice(0, 10)}... <span className="text-sm text-zinc-500 dark:text-zinc-400">{data?.price} {t("som")}</span>
             </MorphingDialogTitle>
             <MorphingDialogSubtitle className='text-zinc-700 dark:text-zinc-400'>
-              {product.brand}
+              {data?.brand}
             </MorphingDialogSubtitle>
           </div>
           <button
@@ -76,7 +70,7 @@ export default function Card({ product }: { product: Product }) {
                 <CarouselItem key={index}>
                   <div className="w-full">
                     <MorphingDialogImage
-                      src={product.image}
+                      src={data.image[0]}
                       alt='A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood.'
                       className='h-full w-full'
                     />
@@ -86,13 +80,13 @@ export default function Card({ product }: { product: Product }) {
             </CarouselContent>
           </Carousel>
           <div className='p-6'>
-            <Link to={`/product/${product.name}`}>
+            <Link to={`/product/${data?.name}`}>
               <MorphingDialogTitle className='text-2xl text-zinc-950 dark:text-zinc-50'>
-                {product.name}
+                {data?.name}
               </MorphingDialogTitle>
             </Link>
             <MorphingDialogSubtitle className='text-zinc-700 dark:text-zinc-400'>
-              {product.brand}
+              {data?.brand}
             </MorphingDialogSubtitle>
             <MorphingDialogDescription
               disableLayoutAnimation
@@ -114,7 +108,7 @@ export default function Card({ product }: { product: Product }) {
               </p>
               <Link
                 className='mt-2 inline-flex text-zinc-500 underline'
-                to={`/product/${product.name}`}
+                to={`/product/${data?.name}`}
               >
                 More
               </Link>

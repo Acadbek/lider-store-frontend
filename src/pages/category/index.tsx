@@ -15,6 +15,51 @@ import axios from "axios";
 import "nouislider/distribute/nouislider.css";
 import React from "react";
 
+const products = [
+  {
+    name: "Wireless Headphones",
+    brand: "SoundPro",
+    price: 49.99,
+    rating: 4,
+    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+  },
+  {
+    name: "Wireless Headphones",
+    brand: "SoundPro SoundPro",
+    price: 49.99,
+    rating: 4,
+    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+  },
+  {
+    name: "Baseboard Buddy – Baseboard & Molding Cleaning Tool! Includes 1 Baseboard Buddy and 3 Reusable Cleaning Pad",
+    brand: "Apple",
+    price: 999.99,
+    rating: 4,
+    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+  },
+  {
+    name: "Laptop",
+    brand: "Dell",
+    price: 1299.99,
+    rating: 1,
+    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+  },
+  {
+    name: "O-Cedar EasyWring Microfiber Spin Mop, Bucket Floor Cleaning System, Red, Gray, Standard",
+    brand: "SoundPro",
+    price: 49.99,
+    rating: 5,
+    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+  },
+  {
+    name: "Smartphone Smartphone Smartphone Smartphone Smartphone Smartphone Smartphone Smartphone Smartphone",
+    brand: "Apple",
+    price: 999.99,
+    rating: 3,
+    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+  }
+]
+
 const modelsInitialState = [
   "Artel", "Samsung", "Avalon", "Shivaki", "LG", "Xiaomi", "Microlab",
   "Sony", "2E", "Edifier", "F&D", "Premier", "Skilltech", "Eldifer",
@@ -27,7 +72,7 @@ const Category = () => {
   const [models, setModels] = React.useState(modelsInitialState.slice(0, 5));
   const [minPrice, setMinPrice] = React.useState<number>(0);
   const [maxPrice, setMaxPrice] = React.useState<number>(100);
-  const [products, setProducts] = React.useState([]);
+  const [_, setProducts] = React.useState([]);
   const [selectedModels, setSelectedModels] = React.useState<string[]>([]); // Tanlangan modellarga tegishli state
 
   const getProducts = async () => {

@@ -4,7 +4,7 @@ import categoryImage2 from '@/assets/images/lider-condi.png';
 import categoryImage6 from '@/assets/images/lider-darmol.png';
 import categoryImage4 from '@/assets/images/lider-ice.png';
 import categoryImage1 from '@/assets/images/lider-phone.png';
-import { Carousel, GenericCard, Hero, Navbar } from "@/components/shared";
+import { Carousel, GenericCard, Hero, MorphingCard, Navbar } from "@/components/shared";
 import { Card, CardTitle } from "@/components/ui/card";
 import React from "react";
 import { useTranslation } from 'react-i18next';
@@ -19,31 +19,43 @@ const Home = () => {
       name: "Wireless Headphones",
       brand: "SoundPro",
       price: 49.99,
-      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+      rating: 4,
+      image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
     },
     {
-      name: "Smartphone",
+      name: "Wireless Headphones",
+      brand: "SoundPro SoundPro",
+      price: 49.99,
+      rating: 4,
+      image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+    },
+    {
+      name: "Baseboard Buddy – Baseboard & Molding Cleaning Tool! Includes 1 Baseboard Buddy and 3 Reusable Cleaning Pad",
       brand: "Apple",
       price: 999.99,
-      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+      rating: 4,
+      image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
     },
     {
       name: "Laptop",
       brand: "Dell",
       price: 1299.99,
-      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+      rating: 1,
+      image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
     },
     {
-      name: "Wireless Headphones",
+      name: "O-Cedar EasyWring Microfiber Spin Mop, Bucket Floor Cleaning System, Red, Gray, Standard",
       brand: "SoundPro",
       price: 49.99,
-      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+      rating: 5,
+      image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
     },
     {
-      name: "Smartphone",
+      name: "Smartphone Smartphone Smartphone Smartphone Smartphone Smartphone Smartphone Smartphone Smartphone",
       brand: "Apple",
       price: 999.99,
-      image: "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+      rating: 3,
+      image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
     }
   ]
 
@@ -228,10 +240,10 @@ const Home = () => {
         <Carousel products={carouselImages()} />
       </Card>
       <div className="container mx-auto">
-        <section className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-6">
-          {/* {products.map((product) => (
-            <ProductCard key={product.name} product={product} />
-          ))} */}
+        <section className='grid gap-2 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] mt-10'>
+          {products.map((product) => (
+            <MorphingCard data={product} />
+          ))}
         </section>
         <section>
           <h2 className="text-2xl font-bold mt-12 text-black dark:text-white">{t("Акции и видеообзоры")}</h2>

@@ -6,12 +6,6 @@ export type IconProps = SVGProps<SVGSVGElement> & {
   icon: IconType;
 };
 
-export const Icon: React.FC<IconProps> = ({ icon, ...props }) => {
-  const Component = React.createElement(Icons[icon], props);
+export const Icon: React.FC<IconProps> = ({ icon, ...props }) =>
+  React.createElement(Icons[icon], props);
 
-  return (
-    <span className="custom-icon">
-      {Component}
-    </span>
-  );
-};
