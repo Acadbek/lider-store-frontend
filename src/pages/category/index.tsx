@@ -21,21 +21,21 @@ const products = [
     brand: "SoundPro",
     price: 49.99,
     rating: 4,
-    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+    image: ["https://voicebot.ai/wp-content/uploads/2019/09/amazon-alexa-event-sept-2019.jpg"]
   },
   {
     name: "Wireless Headphones",
     brand: "SoundPro SoundPro",
     price: 49.99,
     rating: 4,
-    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+    image: ["https://www.refinery29.com/images/11659781.png?format=webp&width=720&height=864&quality=85&crop=5%3A6"]
   },
   {
     name: "Baseboard Buddy – Baseboard & Molding Cleaning Tool! Includes 1 Baseboard Buddy and 3 Reusable Cleaning Pad",
     brand: "Apple",
     price: 999.99,
     rating: 4,
-    image: ["https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"]
+    image: ["https://toolsandtoys.net/wp-content/uploads/2016/07/Canopy-hero.jpg"]
   },
   {
     name: "Laptop",
