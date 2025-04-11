@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { ModeToggle } from '../theme/mode-toggle'
 
 const Navbar = () => {
   return (
@@ -10,7 +9,7 @@ const Navbar = () => {
       </Link>
       <ul className='flex items-center gap-10 [&>li>a]:tracking-wide [&>li>a]:text-lg [&>li>a]:opacity-60'>
         <li>
-          <NavLink>All products</NavLink>
+          <NavLink to='/shop'>All products</NavLink>
         </li>
         <li>
           <NavLink>About us</NavLink>
@@ -25,7 +24,6 @@ const Navbar = () => {
           <NavLink>Contact</NavLink>
         </li>
       </ul>
-      <ModeToggle />
     </nav>
   )
 }

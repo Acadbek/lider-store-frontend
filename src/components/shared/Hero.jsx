@@ -4,6 +4,7 @@ import img from '../../assets/images/webp/img.webp'
 import img2 from '../../assets/images/webp/img2.webp'
 import img3 from '../../assets/images/webp/tv.webp'
 import { Badge } from '../ui/badge'
+import Card from './Card'
 
 const Hero = () => {
   const preloadFonts = () => (
@@ -43,7 +44,10 @@ const Hero = () => {
         </Button>
       </div>
       <div className='grid grid-cols-3 gap-6 mt-16'>
-        <div className='relative hover:scale-[102%] cursor-pointer transition-all' role="region" aria-labelledby="product1">
+        <Card img={img} title="Headphones x-28m" price="USD 149.99" id="product1" type="New" />
+        <Card img={img2} title="eWatch SF 4" price="USD 149.99" id="product2" type="New" />
+        <Card img={img3} title="eDisplay XR" price="USD 149.99" id="product3" type="New" />
+        {/* <div className='relative hover:scale-[102%] cursor-pointer transition-all' role="region" aria-labelledby="product1">
           <Badge variant="outline" className="absolute opacity-60 top-4 left-4 px-8 text-base">New</Badge>
           <img
             className='w-full rounded-lg object-cover'
@@ -84,7 +88,7 @@ const Hero = () => {
             <h2 className='text-[20px] leading-7 tracking-wide'>eDisplay XR</h2>
             <p className='text-[20px] leading-7 tracking-wide opacity-60'>USD 149.99</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
