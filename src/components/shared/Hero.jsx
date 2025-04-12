@@ -3,7 +3,6 @@ import { Button } from '../ui/button'
 import img from '../../assets/images/webp/img.webp'
 import img2 from '../../assets/images/webp/img2.webp'
 import img3 from '../../assets/images/webp/tv.webp'
-import { Badge } from '../ui/badge'
 import Card from './Card'
 
 const Hero = () => {
