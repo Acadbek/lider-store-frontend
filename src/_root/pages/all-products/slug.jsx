@@ -1,16 +1,19 @@
+import React from "react";
 import { ChevronRight, Plus } from "lucide-react"
-import { useCallback, useEffect, useState } from "react";
 import ImageViewer from 'react-simple-image-viewer';
+import img from '@/assets/images/webp/content1.webp'
+import img2 from '@/assets/images/webp/content2.webp'
+import Card from "@/components/shared/Card";
 
 export default function ProductDetailPage() {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const [currentImage, setCurrentImage] = React.useState(0);
+  const [isViewerOpen, setIsViewerOpen] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const openImageViewer = useCallback((index) => {
+  const openImageViewer = React.useCallback((index) => {
     setCurrentImage(index);
     setIsViewerOpen(true);
   }, []);
@@ -60,49 +63,7 @@ export default function ProductDetailPage() {
               />
             </div>
           </div>
-          {/* Product Images */}
-          {/* <div className="space-y-4">
-            <div className="bg-gray-50 rounded-lg p-8 flex items-center justify-center">
-              <img
-                src="https://framerusercontent.com/images/kUOQ8u8fRfnwNx6SFLSesC5Von0.png"
-                alt="Headphones x-28m"
-                width={400}
-                height={400}
-                className="object-contain"
-              />
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              <div className="bg-gray-50 rounded-lg p-2 flex items-center justify-center">
-                <img
-                  src="https://framerusercontent.com/images/9BjIH4JGc22obR8CZEcdsSjMEHo.png"
-                  alt="Headphones side view"
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                />
-              </div>
-              <div className="bg-gray-50 rounded-lg p-2 flex items-center justify-center">
-                <img
-                  src="https://framerusercontent.com/images/jdqv859e9CxxrI9yBY9HdTkkh5g.png"
-                  alt="Headphones front view"
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                />
-              </div>
-              <div className="bg-gray-50 rounded-lg p-2 flex items-center justify-center">
-                <img
-                  src="https://framerusercontent.com/images/8a0OApHbGU7WGut7Y6CjmuV68.png"
-                  alt="Headphones detail view"
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          </div> */}
 
-          {/* Product Details */}
           <div className="col-span-3">
             <h1 className="text-4xl mb-2">Headphones x-28m</h1>
             <p className="text-gray-600 mb-5">
@@ -156,33 +117,33 @@ export default function ProductDetailPage() {
         </div>
 
         {/* Benefits Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-10 border-t border-gray-200 mt-10">
-          <div className="flex items-center gap-4">
-            <div className="flex-shrink-0">
-              <img src="/placeholder.svg?height=24&width=24" alt="Shipping icon" width={24} height={24} />
+        <div className="grid bg-secondary rounded-[12px] grid-cols-1 md:grid-cols-3 gap-4 py-10 mt-10">
+          <div className="flex items-center gap-4 pl-24">
+            <div className="flex-shrink-0 bg-white h-16 w-16 rounded-[12px] flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5.688 19.116q-1.092 0-1.851-.763q-.76-.763-.76-1.853H2.5q-.343 0-.575-.232t-.233-.576V6.616q0-.691.463-1.153T3.308 5h11.615q.667 0 1.141.475t.475 1.14v2h1.5q.383 0 .726.172q.344.172.566.475l2.815 3.79q.081.101.121.222t.04.263v2.155q0 .344-.231.576t-.576.232h-.808q0 1.09-.764 1.853t-1.855.762t-1.852-.762t-.76-1.853H8.309q0 1.096-.764 1.856t-1.856.76m.004-1q.675 0 1.145-.47t.47-1.146t-.47-1.145t-1.145-.47t-1.145.47t-.47 1.145t.47 1.145t1.145.47m-3-2.615h.647q.213-.662.869-1.138t1.484-.478q.79 0 1.466.468q.675.467.888 1.148h7.493V6.616q0-.27-.174-.443T14.923 6H3.308q-.231 0-.423.192q-.193.193-.193.424zm15.385 2.616q.675 0 1.145-.47q.47-.471.47-1.146t-.47-1.145t-1.145-.47t-1.145.47t-.47 1.145t.47 1.145t1.145.47m-1.54-4.615h4.712L18.5 9.866q-.096-.116-.221-.183T18 9.616h-1.461zm-7.422-2.75" /></svg>
             </div>
             <div>
-              <h3 className="font-medium">Free Shipping</h3>
+              <h3 className="text-xl">Free Shipping</h3>
               <p className="text-sm text-gray-500">$50+ orders ship free</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex-shrink-0">
-              <img src="/placeholder.svg?height=24&width=24" alt="Payment icon" width={24} height={24} />
+          <div className="flex items-center gap-4 pl-24">
+            <div className="flex-shrink-0 bg-white h-16 w-16 rounded-[12px] flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20"><path fill="currentColor" d="M13.5 13a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zM2 6.75A2.75 2.75 0 0 1 4.75 4h10.5A2.75 2.75 0 0 1 18 6.75v6.5A2.75 2.75 0 0 1 15.25 16H4.75A2.75 2.75 0 0 1 2 13.25zM4.75 5A1.75 1.75 0 0 0 3 6.75V8h14V6.75A1.75 1.75 0 0 0 15.25 5zM17 9H3v4.25c0 .966.784 1.75 1.75 1.75h10.5A1.75 1.75 0 0 0 17 13.25z" /></svg>
             </div>
             <div>
-              <h3 className="font-medium">Secure Payments</h3>
+              <h3 className="text-xl">Secure Payments</h3>
               <p className="text-sm text-gray-500">Trusted payment options</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex-shrink-0">
-              <img src="/placeholder.svg?height=24&width=24" alt="Return icon" width={24} height={24} />
+          <div className="flex items-center gap-4 pl-24">
+            <div className="flex-shrink-0 bg-white h-16 w-16 rounded-[12px] flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="m112 352l-64-64l64-64" /><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M64 288h294c58.76 0 106-49.33 106-108v-20" /></svg>
             </div>
             <div>
-              <h3 className="font-medium">45-Day Free Return</h3>
+              <h3 className="text-xl">45-Day Free Return</h3>
               <p className="text-sm text-gray-500">Easy, no-fuss returns</p>
             </div>
           </div>
@@ -192,11 +153,9 @@ export default function ProductDetailPage() {
         <div className="my-10">
           <div className="rounded-lg overflow-hidden">
             <img
-              src="/placeholder.svg?height=500&width=1200"
+              src={img}
               alt="Woman wearing headphones outdoors"
-              width={1200}
-              height={500}
-              className="w-full object-cover h-[300px] md:h-[400px]"
+              className="w-full object-cover"
             />
           </div>
         </div>
@@ -206,10 +165,8 @@ export default function ProductDetailPage() {
           <div>
             <div className="rounded-lg overflow-hidden mb-4">
               <img
-                src="/placeholder.svg?height=300&width=300"
+                src={img2}
                 alt="Person with headphones"
-                width={300}
-                height={300}
                 className="w-full object-cover aspect-square"
               />
             </div>
@@ -223,10 +180,8 @@ export default function ProductDetailPage() {
           <div>
             <div className="rounded-lg overflow-hidden mb-4">
               <img
-                src="/placeholder.svg?height=300&width=300"
+                src={img2}
                 alt="Person with headphones"
-                width={300}
-                height={300}
                 className="w-full object-cover aspect-square"
               />
             </div>
@@ -240,10 +195,8 @@ export default function ProductDetailPage() {
           <div>
             <div className="rounded-lg overflow-hidden mb-4">
               <img
-                src="/placeholder.svg?height=300&width=300"
+                src={img2}
                 alt="Headphones detail"
-                width={300}
-                height={300}
                 className="w-full object-cover aspect-square"
               />
             </div>
@@ -256,11 +209,16 @@ export default function ProductDetailPage() {
         </div>
 
         {/* Testimonials Section */}
-        <div className="my-16">
-          <h2 className="text-2xl font-medium mb-8">What customers are saying</h2>
+        <div className="my-20">
+          <div className="flex justify-between items-center">
+            <h2 className="text-4xl font-medium text-gray-500"><span className="text-gray-900">What customers</span> <br /> are saying</h2>
+            <p className="text-gray-600 text-lg leading-6">
+              Experience the convenience and satisfaction shared <br /> by our thriving community of shoppers who trust <br /> our ecommerce store for their every purchase.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            <div className="space-y-4 bg-secondary p-6 rounded-lg">
               <p className="text-gray-600 italic">
                 "Couldn't be happier with my purchase from this shop. The headphones I received are exactly as
                 described. The level of sound quality and comfort is exceptional."
@@ -268,7 +226,7 @@ export default function ProductDetailPage() {
               <p className="font-medium">Alex R.</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 bg-secondary p-6 rounded-lg">
               <p className="text-gray-600 italic">
                 "I was skeptical about buying headphones online, but I'm so glad I did. These headphones far exceeded my
                 expectations. The battery life is amazing, and the sound quality is amazing."
@@ -276,7 +234,7 @@ export default function ProductDetailPage() {
               <p className="font-medium">Emily J.</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 bg-secondary p-6 rounded-lg">
               <p className="text-gray-600 italic">
                 "I've been searching for the perfect pair of headphones for ages, and I finally found them! The sound is
                 crystal clear, the bass is incredible, but they're also comfortable enough to wear all day and couldn't
@@ -285,75 +243,17 @@ export default function ProductDetailPage() {
               <p className="font-medium">Michael S.</p>
             </div>
           </div>
-
-          <div className="mt-8 text-sm text-gray-500">
-            <p>
-              Experience the convenience and satisfaction enjoyed by a growing community of shoppers who trust our
-              exceptional audio for their every purchase.
-            </p>
-          </div>
         </div>
+        <hr className="my-10 border-gray-300" />
 
         {/* Related Products */}
-        <div className="my-16">
-          <h2 className="text-2xl font-medium mb-8">Related Products</h2>
+        <div>
+          <h2 className="text-4xl font-medium mb-8">Related Products</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div>
-              <div className="bg-gray-50 rounded-lg p-4 flex items-center justify-center mb-3">
-                <img
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Headphones x-27h"
-                  width={200}
-                  height={200}
-                  className="object-contain h-40"
-                />
-              </div>
-              <h3 className="font-medium">Headphones x-27h</h3>
-              <p className="text-sm text-gray-500">USD 99.99</p>
-            </div>
-
-            <div>
-              <div className="bg-gray-50 rounded-lg p-4 flex items-center justify-center mb-3">
-                <img
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Headphones x-30c"
-                  width={200}
-                  height={200}
-                  className="object-contain h-40"
-                />
-              </div>
-              <h3 className="font-medium">Headphones x-30c</h3>
-              <p className="text-sm text-gray-500">USD 129.99</p>
-            </div>
-
-            <div>
-              <div className="bg-gray-50 rounded-lg p-4 flex items-center justify-center mb-3">
-                <img
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Headphones x-22c"
-                  width={200}
-                  height={200}
-                  className="object-contain h-40"
-                />
-              </div>
-              <h3 className="font-medium">Headphones x-22c</h3>
-              <p className="text-sm text-gray-500">USD 149.99</p>
-            </div>
-
-            <div>
-              <div className="bg-gray-50 rounded-lg p-4 flex items-center justify-center mb-3">
-                <img
-                  src="/placeholder.svg?height=200&width=200"
-                  alt="Headphones x-35e"
-                  width={200}
-                  height={200}
-                  className="object-contain h-40"
-                />
-              </div>
-              <h3 className="font-medium">Headphones x-35e</h3>
-              <p className="text-sm text-gray-500">USD 169.99</p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
       </div>
