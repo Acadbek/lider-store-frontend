@@ -1,6 +1,32 @@
 import { ChevronRight, Plus } from "lucide-react"
+import { useCallback, useEffect, useState } from "react";
+import ImageViewer from 'react-simple-image-viewer';
 
 export default function ProductDetailPage() {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
+
+  const images = [
+    'https://framerusercontent.com/images/9BjIH4JGc22obR8CZEcdsSjMEHo.png',
+    'https://framerusercontent.com/images/jdqv859e9CxxrI9yBY9HdTkkh5g.png',
+    'https://framerusercontent.com/images/8a0OApHbGU7WGut7Y6CjmuV68.png',
+    'https://framerusercontent.com/images/kUOQ8u8fRfnwNx6SFLSesC5Von0.png',
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -11,10 +37,31 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Product Section */}
-      <div className="">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
+          <div className="col-span-5 flex gap-4 h-[576px]">
+            <div className="flex flex-col h-[576px] gap-4">
+              {images.slice(0, 3).map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Preview ${index}`}
+                  className="object-cover w-[250px] h-[181.33px] rounded-[12px] cursor-pointer"
+                  onClick={() => openImageViewer(index)}
+                />
+              ))}
+            </div>
+            <div className="w-full">
+              <img
+                src={images[3]}
+                alt="Headphones x-28m"
+                className="w-full h-full object-cover rounded-[12px] cursor-pointer"
+                onClick={() => openImageViewer(3)}
+              />
+            </div>
+          </div>
           {/* Product Images */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <div className="bg-gray-50 rounded-lg p-8 flex items-center justify-center">
               <img
                 src="https://framerusercontent.com/images/kUOQ8u8fRfnwNx6SFLSesC5Von0.png"
@@ -53,10 +100,10 @@ export default function ProductDetailPage() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Product Details */}
-          <div>
+          <div className="col-span-3">
             <h1 className="text-4xl mb-2">Headphones x-28m</h1>
             <p className="text-gray-600 mb-5">
               Immerse yourself in the music or powerful through your workout. These headphones are designed to keep up
@@ -310,6 +357,18 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </div>
+      {isViewerOpen && (
+        <ImageViewer
+          src={images}
+          currentIndex={currentImage}
+          onClose={closeImageViewer}
+          disableScroll={true}
+          backgroundStyle={{
+            backgroundColor: 'rgba(0,0,0,0.9)',
+          }}
+          closeOnClickOutside={true}
+        />
+      )}
     </div>
   )
 }
