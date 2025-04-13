@@ -1,4 +1,3 @@
-import { ThemeProvider } from "./components/theme/theme-provider"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import RootLayout from "./_root/RootLayout"
 import Home from "./_root/pages/Home"
@@ -9,19 +8,17 @@ import NotFoundPage from "./_root/pages/404"
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="theme">
-      <BrowserRouter>
-        <Routes>
-          <Route element={<RootLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<ProductListingPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/shop/:slug" element={<ProductDetailPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<ProductListingPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/shop/:slug" element={<ProductDetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
