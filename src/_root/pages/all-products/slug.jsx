@@ -1,18 +1,32 @@
 import React from "react";
-import { ChevronRight, Plus } from "lucide-react"
+import { ArrowRightIcon, ChevronRight } from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import ImageViewer from 'react-simple-image-viewer';
 import img from '@/assets/images/webp/content1.webp'
 import img2 from '@/assets/images/webp/content2.webp'
 import Card from "@/components/shared/Card";
 import { Helmet } from "react-helmet";
+import { Button } from "@/components/ui/button";
 
 export default function ProductDetailPage() {
   const [currentImage, setCurrentImage] = React.useState(0);
   const [isViewerOpen, setIsViewerOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const openImageViewer = React.useCallback((index) => {
     setCurrentImage(index);
@@ -98,33 +112,33 @@ export default function ProductDetailPage() {
               </div>
 
               {/* Accordion sections */}
-              <div className="border-t border-gray-200 py-4">
+              <div className="py-4 select-none cursor-pointer" onClick={handleOpen}>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
-                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))"><g color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))" weight="regular"><path d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></g></svg>
-                    <h2 className="font-medium">Warranty</h2>
+                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" ><g fill="#1e2939" weight="regular"><path d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></g></svg>
+                    <h2 className="text-gray-800">Warranty</h2>
                   </div>
-                  <Plus className="h-4 w-4 text-gray-400" />
+                  <ArrowRightIcon className="h-4 w-4 text-gray-800" />
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 py-4">
+              <div className="border-t select-none border-gray-200 py-4 cursor-pointer" onClick={handleOpen}>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
-                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))"><g color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))" weight="regular"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"></path></g></svg>
-                    <h2 className="font-medium">Shipping & Delivery</h2>
+                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="#1e2939" focusable="false" color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))"><g color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))" weight="regular"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z"></path></g></svg>
+                    <h2 className="text-gray-800">Shipping & Delivery</h2>
                   </div>
-                  <Plus className="h-4 w-4 text-gray-400" />
+                  <ArrowRightIcon className="h-4 w-4 text-gray-800" />
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 py-4">
+              <div className="border-t select-none border-gray-200 py-4 cursor-pointer" onClick={handleOpen}>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
-                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))"><g color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))" weight="regular"><path d="M201.89,54.66A103.43,103.43,0,0,0,128.79,24H128A104,104,0,0,0,24,128v56a24,24,0,0,0,24,24H64a24,24,0,0,0,24-24V144a24,24,0,0,0-24-24H40.36A88.12,88.12,0,0,1,190.54,65.93,87.39,87.39,0,0,1,215.65,120H192a24,24,0,0,0-24,24v40a24,24,0,0,0,24,24h24a24,24,0,0,1-24,24H136a8,8,0,0,0,0,16h56a40,40,0,0,0,40-40V128A103.41,103.41,0,0,0,201.89,54.66ZM64,136a8,8,0,0,1,8,8v40a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V136Zm128,56a8,8,0,0,1-8-8V144a8,8,0,0,1,8-8h24v56Z"></path></g></svg>
-                    <h2 className="font-medium">Support</h2>
+                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="#1e2939" focusable="false" color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))"><g color="var(--token-4cfb3a28-a190-4230-b1db-5025cd040ee9, rgb(74, 74, 74))" weight="regular"><path d="M201.89,54.66A103.43,103.43,0,0,0,128.79,24H128A104,104,0,0,0,24,128v56a24,24,0,0,0,24,24H64a24,24,0,0,0,24-24V144a24,24,0,0,0-24-24H40.36A88.12,88.12,0,0,1,190.54,65.93,87.39,87.39,0,0,1,215.65,120H192a24,24,0,0,0-24,24v40a24,24,0,0,0,24,24h24a24,24,0,0,1-24,24H136a8,8,0,0,0,0,16h56a40,40,0,0,0,40-40V128A103.41,103.41,0,0,0,201.89,54.66ZM64,136a8,8,0,0,1,8,8v40a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V136Zm128,56a8,8,0,0,1-8-8V144a8,8,0,0,1,8-8h24v56Z"></path></g></svg>
+                    <h2 className="text-gray-800">Support</h2>
                   </div>
-                  <Plus className="h-4 w-4 text-gray-400" />
+                  <ArrowRightIcon className="h-4 w-4 text-gray-800" />
                 </div>
               </div>
             </div>
@@ -154,7 +168,7 @@ export default function ProductDetailPage() {
 
             <div className="flex items-center gap-4 pl-24">
               <div className="flex-shrink-0 bg-white h-16 w-16 rounded-[12px] flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="m112 352l-64-64l64-64" /><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M64 288h294c58.76 0 106-49.33 106-108v-20" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="m112 352l-64-64l64-64" /><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M64 288h294c58.76 0 106-49.33 106-108v-20" /></svg>
               </div>
               <div>
                 <h3 className="text-xl">45-Day Free Return</h3>
@@ -162,6 +176,25 @@ export default function ProductDetailPage() {
               </div>
             </div>
           </div>
+
+          <Dialog open={open} onOpenChange={setOpen}>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>Edit profile</DialogTitle>
+                <DialogDescription>
+                  Make changes to your profile here. Click save when you're done.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <div className="grid grid-cols-4 items-center gap-4">
+                  h
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                  c
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
 
           {/* Hero Image */}
           <div className="my-10">
@@ -282,7 +315,7 @@ export default function ProductDetailPage() {
             onClose={closeImageViewer}
             disableScroll={true}
             backgroundStyle={{
-              backgroundColor: 'rgba(0,0,0,0.9)',
+              backgroundColor: 'rgba(0,0,0,0.6)',
             }}
             closeOnClickOutside={true}
           />

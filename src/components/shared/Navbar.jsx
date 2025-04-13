@@ -12,16 +12,16 @@ const Navbar = () => {
           <NavLink to='/shop'>All products</NavLink>
         </li>
         <li>
-          <NavLink>About us</NavLink>
+          <NavLink to='/about-us'>About us</NavLink>
         </li>
         <li>
-          <NavLink>FAQ</NavLink>
+          <NavLink to='/faq'>FAQ</NavLink>
         </li>
         <li>
-          <NavLink>News</NavLink>
+          <NavLink to='/news'>News</NavLink>
         </li>
         <li>
-          <NavLink>Contact</NavLink>
+          <NavLink to='/contact'>Contact</NavLink>
         </li>
       </ul>
     </nav>

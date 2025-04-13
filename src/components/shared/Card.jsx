@@ -20,7 +20,9 @@ const Card = (
           )
         }
         <img
-          className='w-full rounded-lg object-cover'
+          height={480}
+          width={300}
+          className='w-full rounded-lg object-cover h-[480px]'
           loading='lazy'
           src={img}
           alt="Headphones x-28m in black color"
